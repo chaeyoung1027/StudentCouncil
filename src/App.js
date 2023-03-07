@@ -8,8 +8,8 @@ function App() {
       <Router>
         <Switch>
           <Route path='/' exact component={Home} />
+          <Route path='/club' component={Club} />
           <Route path="*" element={<h1>404 페이지</h1>}/>
-          <Route path="/club" component={Club}/>
         </Switch>
       </Router>
     );
