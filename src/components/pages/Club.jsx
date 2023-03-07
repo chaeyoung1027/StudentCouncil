@@ -1,9 +1,19 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 
 function Club(props) {
   const history = useHistory();
+
+  let [동아리, 동아리이름] = useState([
+    "MAS",
+    "JS STUDY",
+    "D!DA",
+    "CPU(C Project with yoU",
+    "APP&ME",
+    "우친동(우리 친해요 동아리)",
+    "게임메이커(Game Maker)",
+  ]);
 
   function handler2() {
     history.replace("/");
@@ -27,18 +37,7 @@ function Club(props) {
       </div>
       <RightSideBar className="rightBar">
         {/* 모달. map사용. 배열에 사진링크 넣고 삽입. */}
-        <Modal />
-        <Modal />
-        <Modal />
-        <Modal />
-        <Modal />
-        <Modal />
-        <Modal />
-        <Modal />
-        <Modal />
-        <Modal />
-        <Modal />
-        <Modal />
+        <Modal 동아리={동아리} />
       </RightSideBar>
     </Container>
   );
@@ -55,7 +54,7 @@ const Container = styled.div`
 const RightSideBar = styled.div`
   float: left;
   width: 47.2%;
-  height: 1920px;
+  height: 100%;
   overflow: scroll;
 `;
 const HomeButton = styled.button`
@@ -78,24 +77,38 @@ const ImageBox = styled.div`
   width: 360px;
   height: 300px;
   background-color: black;
+  border: 0.5px black solid;
 `;
 const ContentBox = styled.div`
   width: 360px;
   height: 300px;
   background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 0.5px black solid;
 `;
 function Modal(props) {
   // let[title, setTitle] = useState(0);
   return (
     <>
-      <div style={{ display: "flex" }}>
-        <ImageBox />
-        <ContentBox />
-      </div>
-      <div style={{ display: "flex" }}>
-        <ContentBox />
-        <ImageBox />
-      </div>
+      {props.동아리.map(function(a, i) {
+        return (
+          <>
+            {i % 2 == 1 ? (
+              <div style={{ display: "flex" }}>
+                <ImageBox className="ImageBox" />
+                <ContentBox>{props.동아리[i]}</ContentBox>
+              </div>
+            ) : (
+              <div style={{ display: "flex" }}>
+                <ContentBox>{props.동아리[i]}</ContentBox>
+                <ImageBox className="ImageBox" />
+              </div>
+            )}
+          </>
+        );
+      })}
     </>
   );
 }
