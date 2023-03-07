@@ -2,13 +2,20 @@ import React, {useState} from 'react';
 import styled from 'styled-components';
 import image from '../../img/mainpage.png';
 import imagecircle from '../../img/circle.png';
-import './home.css';
+import { useHistory } from "react-router-dom";
 
 function Home(props) {
     const [width, setWidth] = useState('43vw');
     const [height, setHeight] = useState('43vw');
     const [marginTop, setMarginTop] = useState('-53vw');
     const [color, setColor] = useState('#F5F8FF');
+
+    const history = useHistory();
+
+    function handler2() {
+        history.replace("/homeintent");
+        window.location.reload();
+    }
     return (
         <Container>
             <Img src ={image}></Img>
@@ -17,6 +24,9 @@ function Home(props) {
                     setHeight('90vw');
                     setMarginTop('-80vw');
                     setColor('#161616');
+                    setTimeout(() => {
+                        handler2();
+                    }, 1250);
                 }}></Img2>
             <Text style={{color}}>MIRIM ALBUM</Text>
         </Container>
