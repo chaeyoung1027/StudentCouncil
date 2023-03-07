@@ -5,9 +5,10 @@ import { useHistory } from "react-router-dom";
 function Club(props) {
   const history = useHistory();
 
-  const handler2 = () => {
-    history.push("/");
-  };
+  function handler2() {
+    history.replace("/");
+    window.location.reload();
+  }
 
   return (
     <Container>
