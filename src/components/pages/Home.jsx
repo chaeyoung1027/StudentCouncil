@@ -44,7 +44,7 @@ const Img = styled.img`
     width: 63vw;
     display: flex;
     justify-content: center;
-    margin-top: -2.5vw;`;
+    margin-top: -3vw;`;
 const Img2 = styled.img`
     display: flex;
     justify-content: center;
