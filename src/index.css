@@ -18,7 +18,17 @@ code {
   display: none;
 }
 
+.ImageBox {
+  object-fit: contain;
+}
+
 .ImageBox:hover {
   transition: 0.5s;
   background-color: red;
+}
+
+@media screen and (max-width: 1784px) {
+  .body {
+    overflow: auto;
+  }
 }
