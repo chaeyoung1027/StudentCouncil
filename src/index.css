@@ -1,14 +1,23 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+KR&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+KR&display=swap");
 
 body {
   margin: 0;
-  font-family: 'Noto Sans', sans-serif;
-  font-family: 'Noto Sans KR', sans-serif;
+  font-family: "Noto Sans", sans-serif;
+  font-family: "Noto Sans KR", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.rightBar::-webkit-scrollbar {
+  display: none;
+}
+
+.ImageBox:hover {
+  transition: 0.5s;
+  background-color: red;
 }
