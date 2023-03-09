@@ -14,6 +14,7 @@ function HomeIntent(props) {
                     <Img src={image}></Img>
                     <Img src={image}></Img>
                 </Carousel>
+                <Circle></Circle>
         </Container>
         
     )
@@ -24,6 +25,7 @@ const Container = styled.div`
   overflow: hidden;
   height: 100vh;
   background-color: #161616;
+  overflow: hidden;
 `;
 const Text = styled.div`
     color: #FFFFFF;
@@ -38,4 +40,13 @@ const Img = styled.img`
     widht: 100%;
     height: 100%;
     object-fit: cover;`;
+const Circle = styled.div`
+  width: 55vw;
+  height: 55vw;
+  background-color: #f3f3f3;
+  border-radius: 50rem;
+  position: absolute;
+  top: 43rem;
+  left: 27rem;
+`;
 export default HomeIntent;
