@@ -1,8 +1,6 @@
 import React, {useState} from 'react';
 import styled from 'styled-components';
 import about from '../../img/about.png';
-import imagecircle from '../../img/circle.png';
-import { useHistory } from "react-router-dom";
 import './About.css';
 
 function About(props) {
