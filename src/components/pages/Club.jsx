@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
+import image0 from "../../img/0.jpg";
+import image1 from "../../img/1.jpg";
+import image2 from "../../img/2.jpg";
+import image3 from "../../img/3.jpg";
+import image4 from "../../img/4.jpg";
+import image5 from "../../img/5.jpg";
 
 function Club(props) {
   const history = useHistory();
@@ -15,13 +21,15 @@ function Club(props) {
     "게임메이커(Game Maker)",
   ]);
 
+  let images = [image0, image1, image2, image3, image4, image5];
+
   function handler2() {
     history.replace("/");
     window.location.reload();
   }
 
   return (
-    <Container>
+    <Container className="body">
       <HomeButton onClick={handler2}>home</HomeButton>
       <div style={{ float: "left" }}>
         <div style={{ padding: "16rem 0", marginRight: "5rem" }}>
@@ -37,7 +45,7 @@ function Club(props) {
       </div>
       <RightSideBar className="rightBar">
         {/* 모달. map사용. 배열에 사진링크 넣고 삽입. */}
-        <Modal 동아리={동아리} />
+        <Modal 동아리={동아리} images={images} />
       </RightSideBar>
     </Container>
   );
@@ -46,7 +54,7 @@ const Container = styled.div`
   /* height: 50.5rem; */
   width: 100vw;
   height: 100vh;
-  overflow: hidden;
+  // overflow: hidden;
   top: 0;
   background-color: #f3f3f3;
   /* padding: 4rem; */
@@ -73,7 +81,7 @@ const Content = styled.p`
   font-size: 26px;
   color: #475467;
 `;
-const ImageBox = styled.div`
+const ImageBox = styled.img`
   width: 360px;
   height: 300px;
   background-color: black;
@@ -92,18 +100,18 @@ function Modal(props) {
   // let[title, setTitle] = useState(0);
   return (
     <>
-      {props.동아리.map(function(a, i) {
+      {props.동아리.map(function (a, i) {
         return (
           <>
             {i % 2 == 1 ? (
               <div style={{ display: "flex" }}>
-                <ImageBox className="ImageBox" />
+                <ImageBox className="ImageBox" src={props.images[i]} />
                 <ContentBox>{props.동아리[i]}</ContentBox>
               </div>
             ) : (
               <div style={{ display: "flex" }}>
                 <ContentBox>{props.동아리[i]}</ContentBox>
-                <ImageBox className="ImageBox" />
+                <ImageBox className="ImageBox" src={props.images[i]} />
               </div>
             )}
           </>

@@ -20,12 +20,12 @@ function HomeIntent(props) {
     )
 }
 const Container = styled.div`
-  top: 0;
-  width: 100vw;
-  overflow: hidden;
-  height: 100vh;
-  background-color: #161616;
-  overflow: hidden;
+    top: 0;
+    width: 100vw;
+    overflow: hidden;
+    height: 100vh;
+    background-color: #161616;
+    position: absolute;
 `;
 const Text = styled.div`
     color: #FFFFFF;
@@ -41,12 +41,12 @@ const Img = styled.img`
     height: 100%;
     object-fit: cover;`;
 const Circle = styled.div`
-  width: 55vw;
-  height: 55vw;
+  width: 80vw;
+  height: 80vw;
   background-color: #f3f3f3;
-  border-radius: 50rem;
+  border-radius: 100rem;
   position: absolute;
-  top: 43rem;
-  left: 27rem;
+  top: 52rem;
+  left: 11rem;
 `;
 export default HomeIntent;
