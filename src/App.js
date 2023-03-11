@@ -4,6 +4,7 @@ import Home from './components/pages/Home';
 import HomeIntent from './components/pages/HomeIntent';
 import Club from './components/pages/Club';
 import SchEvent from './components/pages/SchoolEvent';
+import About from './components/pages/About';
 
 function App() {
     return (
@@ -13,6 +14,7 @@ function App() {
           <Route path='/homeintent' component={HomeIntent} />
           <Route path='/club' component={Club} />
           <Route path='/schoolevent' component={SchEvent} />
+          <Route path='/about' component={About} />
           <Route path="*" element={<h1>404 페이지</h1>}/>
         </Switch>
       </Router>
