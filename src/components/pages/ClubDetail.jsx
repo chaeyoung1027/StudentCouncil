@@ -12,6 +12,15 @@ function ClubExpl(props) {
     window.location.reload();
   }
 
+  const settings = {
+    height: 100,
+    dots: true,
+    infinite: true,
+    speed: 500,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+  };
+
   return (
     <Container>
       <HomeButton onClick={toHome}>home</HomeButton>
@@ -28,6 +37,15 @@ function ClubExpl(props) {
             속가장 큰 추억으로 동아리 활동이 자리매김합니다.
           </Content>
         </div>
+      </div>
+      <div style={{ top: "100rem" }}>
+        <Carousel settings={settings}>
+          <Img src={image} style={{ rotate: 90 }}></Img>
+          <Img src={image}></Img>
+          <Img src={image}></Img>
+          <Img src={image}></Img>
+          <Img src={image}></Img>
+        </Carousel>
       </div>
     </Container>
   );
@@ -63,5 +81,10 @@ const Content = styled.p`
   font-size: 26px;
   color: white;
   letter-spacing: 0.1rem;
+`;
+const Img = styled.img`
+  widht: 100%;
+  height: 100%;
+  object-fit: cover;
 `;
 export default ClubExpl;
