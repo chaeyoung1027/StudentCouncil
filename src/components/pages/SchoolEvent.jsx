@@ -1,6 +1,8 @@
 import React, { useState } from "react";
+import { Carousel } from 'react-circular-carousel'
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
+import image from '../../img/first.png';
 
 function SchoolEvent(props) {
 
@@ -21,11 +23,20 @@ function SchoolEvent(props) {
         window.location.reload();
     }
   return (
-    <>
-    <HomeButton onClick={handler2}>Home</HomeButton><Container>
-      <Circle />
-    </Container>
-    </>
+    <Container>
+      <HomeButton onClick={handler2}>Home</HomeButton>
+      <TitleText>행사 이름</TitleText>
+      <ContextText>동아리 설명을 합니다.</ContextText>
+      <Carousel height={320} width={120} spacing={500} gab={20} offset={36} >
+        <Img src={image}></Img>
+        <Img src={image}></Img>
+        <Img src={image}></Img>
+        <Img src={image}></Img>
+        <Img src={image}></Img>
+      </Carousel>
+      <BorderCircle />
+      <Circle />  
+     </Container>
   );
 }
 
@@ -44,13 +55,46 @@ const Container = styled.div`
   overflow: hidden;
 `;
 const Circle = styled.div`
-  width: 55vw;
-  height: 55vw;
-  background-color: #ffffff;
+  width: 40vw;
+  height: 40vw;
+  background-color: #000000;
   border-radius: 50rem;
   position: absolute;
-  top: 43rem;
-  left: 27rem;
+  top: 5rem;
+  right: -30rem;
+`;
+const BorderCircle = styled.div`
+  width: 45vw;
+  height: 45vw;
+  background-color: #f3f3f3;
+  border: 2px solid rgb(0, 0, 0);
+  position: absolute;
+  top: 2rem;
+  right: -33rem;
+  border-radius: 50rem;
+`;
+const Img = styled.img`
+    widht: 100%;
+    height: 100%;
+    object-fit: cover;
+    text-align: center;
+`;
+const TitleText = styled.div`
+    color: #000000;
+    font-size: 3.2vw;
+    text-align: left;
+    margin-top: 10vw;
+    margin-left: 5vw;
+    font-weight: bold;
+    font-family: 'Noto Sans KR', sans-serif; 
+`;
+const ContextText = styled.div`
+    color: #000000;
+    font-size: 1wv;
+    text-align: left;
+    margin-top: 3vw;
+    margin-left: 5vw;
+    font-family: 'Noto Sans KR', sans-serif;
 `;
 
 export default SchoolEvent;
