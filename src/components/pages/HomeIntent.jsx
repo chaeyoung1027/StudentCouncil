@@ -1,12 +1,16 @@
-import React, {useState,Component } from 'react';
+// import React, {useState,Component } from 'react';
 // import { Carousel } from 'react-circular-carousel'
 import styled from 'styled-components';
-import { useHistory } from "react-router-dom";
+// import { useHistory } from "react-router-dom";
 // import Card from "../home-ui/Card";
 
 function HomeIntent(props) {
     
     Handler();
+
+    // 이미지 배여 ㄹ입니다
+    // const img = [];
+
 
     return (
         <Container>
@@ -14,206 +18,111 @@ function HomeIntent(props) {
             <Text>TEXTINPUT</Text>
             <figure>
                 <section>
-                <article className="on">
+                    <article className="on">
                     <div className="inner">
-                    <div className="pic">
+                        <div className="pic">
                         <div className="dot"></div>
-                    </div>
+                        </div>
 
-                    <div className="txt">
+                        <div className="txt">
                         <h2>Blizzards</h2>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-                        <ul>
-                        <li className="pause">
-                            <i className="fas fa-pause"></i>
-                        </li>
-                        <li className="play">
-                            <i className="fas fa-play"></i>
-                        </li>
-                        <li className="load">
-                            <i className="fas fa-redo-alt"></i>
-                        </li>
-                        </ul>
-                        <audio src="music/Blizzards.mp3"></audio>
+                        </div>
                     </div>
-                    </div>
-                </article>
+                    </article>
 
-                <article>
+                    <article>
                     <div className="inner">
-                    <div className="pic">
+                        <div className="pic">
                         <div className="dot"></div>
-                    </div>
+                        </div>
 
-                    <div className="txt">
+                        <div className="txt">
                         <h2>Calm</h2>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-                        <ul>
-                        <li className="pause">
-                            <i className="fas fa-pause"></i>
-                        </li>
-                        <li className="play">
-                            <i className="fas fa-play"></i>
-                        </li>
-                        <li className="load">
-                            <i className="fas fa-redo-alt"></i>
-                        </li>
-                        </ul>
+                        </div>
                     </div>
-                    </div>
-                </article>
+                    </article>
 
-                <article>
+                    <article>
                     <div className="inner">
-                    <div className="pic">
+                        <div className="pic">
                         <div className="dot"></div>
-                    </div>
+                        </div>
 
-                    <div className="txt">
+                        <div className="txt">
                         <h2>Dusty Road</h2>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-                        <ul>
-                        <li className="pause">
-                            <i className="fas fa-pause"></i>
-                        </li>
-                        <li className="play">
-                            <i className="fas fa-play"></i>
-                        </li>
-                        <li className="load">
-                            <i className="fas fa-redo-alt"></i>
-                        </li>
-                        </ul>
-                        <audio src="music/Dusty_Road.mp3"></audio>
+                        </div>
                     </div>
-                    </div>
-                </article>
+                    </article>
 
-                <article>
+                    <article>
                     <div className="inner">
-                    <div className="pic">
+                        <div className="pic">
                         <div className="dot"></div>
-                    </div>
+                        </div>
 
-                    <div className="txt">
+                        <div className="txt">
                         <h2>Escape</h2>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-                        <ul>
-                        <li className="pause">
-                            <i className="fas fa-pause"></i>
-                        </li>
-                        <li className="play">
-                            <i className="fas fa-play"></i>
-                        </li>
-                        <li className="load">
-                            <i className="fas fa-redo-alt"></i>
-                        </li>
-                        </ul>
-                        <audio src="music/Escape.mp3"></audio>
+                        </div>
                     </div>
-                    </div>
-                </article>
+                    </article>
 
-                <article>
+                    <article>
                     <div className="inner">
-                    <div className="pic">
+                        <div className="pic">
                         <div className="dot"></div>
-                    </div>
+                        </div>
 
-                    <div className="txt">
+                        <div className="txt">
                         <h2>Payday</h2>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-                        <ul>
-                        <li className="pause">
-                            <i className="fas fa-pause"></i>
-                        </li>
-                        <li className="play">
-                            <i className="fas fa-play"></i>
-                        </li>
-                        <li className="load">
-                            <i className="fas fa-redo-alt"></i>
-                        </li>
-                        </ul>
-                        <audio src="music/Payday.mp3"></audio>
+                        </div>
                     </div>
-                    </div>
-                </article>
+                    </article>
 
-                <article>
+                    <article>
                     <div className="inner">
-                    <div className="pic">
+                        <div className="pic">
                         <div className="dot"></div>
-                    </div>
+                        </div>
 
-                    <div className="txt">
+                        <div className="txt">
                         <h2>Retreat</h2>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-                        <ul>
-                        <li className="pause">
-                            <i className="fas fa-pause"></i>
-                        </li>
-                        <li className="play">
-                            <i className="fas fa-play"></i>
-                        </li>
-                        <li className="load">
-                            <i className="fas fa-redo-alt"></i>
-                        </li>
-                        </ul>
-                        <audio src="music/Retreat.mp3"></audio>
+                        </div>
                     </div>
-                    </div>
-                </article>
+                    </article>
 
-                <article>
+                    <article>
                     <div className="inner">
-                    <div className="pic">
+                        <div className="pic">
                         <div className="dot"></div>
-                    </div>
+                        </div>
 
-                    <div className="txt">
+                        <div className="txt">
                         <h2>Seasonal</h2>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-                        <ul>
-                        <li className="pause">
-                            <i className="fas fa-pause"></i>
-                        </li>
-                        <li className="play">
-                            <i className="fas fa-play"></i>
-                        </li>
-                        <li className="load">
-                            <i className="fas fa-redo-alt"></i>
-                        </li>
-                        </ul>
-                        <audio src="music/Seasonal.mp3"></audio>
+                        </div>
                     </div>
-                    </div>
-                </article>
+                    </article>
 
-                <article>
+                    <article>
                     <div className="inner">
-                    <div className="pic">
+                        <div className="pic">
                         <div className="dot"></div>
-                    </div>
+                        </div>
 
-                    <div className="txt">
+                        <div className="txt">
                         <h2>Vespers</h2>
                         <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-                        <ul>
-                        <li className="pause">
-                            <i className="fas fa-pause"></i>
-                        </li>
-                        <li className="play">
-                            <i className="fas fa-play"></i>
-                        </li>
-                        <li className="load">
-                            <i className="fas fa-redo-alt"></i>
-                        </li>
-                        </ul>
-                        <audio src="music/Vespers.mp3"></audio>
+                        </div>
                     </div>
-                    </div>
-                </article>
+                    </article>
                 </section>
-            </figure>
+
+                </figure>
                 <Prev className='btnPrev'><span className='prev'>이전</span></Prev>
                 <Next className='btnNext'><span className='next'>다음</span></Next>
             <Circle></Circle>
@@ -223,10 +132,9 @@ function HomeIntent(props) {
 
 }
 
-function Handler() {
+const Handler = () => {
     const frame = document.querySelector("section");
-    const lists = frame.querySelectorAll("article");
-    const audio = frame.querySelectorAll("audio");
+    const lists = document.querySelectorAll("article");
     const prev = document.querySelector(".btnPrev");
     const next = document.querySelector(".btnNext");
     const deg = 45; //각각의 article요소가 회전할 각도
@@ -237,14 +145,13 @@ function Handler() {
     
     function activation(index, lists) {
       for (let el of lists) {
-        el.classList.remove("on");
+        el.classNameList.remove("on");
       }
-      lists[index].classList.add("on");
+      lists[index].classNameList.add("on");
     }
-    
     //article의 개수만큼 반복
     for (let el of lists) {
-      let pic = el.querySelector(".pic");
+    //   let pic = el.querySelector(".pic");
       //각 article 요소를 45도씩 회전하고 아래로 배치
       el.style.transform = `rotate(${deg * i}deg) translateY(-100vh)`;
       i++;
@@ -257,7 +164,7 @@ function Handler() {
       num++;
       frame.style.transform = `rotate(${deg * num}deg)`;
     
-      active == 0 ? (active = len) : active--;
+      active === 0 ? (active = len) : active--;
       activation(active, lists);
     });
     
@@ -268,12 +175,12 @@ function Handler() {
       num--;
       frame.style.transform = `rotate(${deg * num}deg)`;
     
-      active == len ? (active = 0) : active++;
+      active === len ? (active = 0) : active++;
       activation(active, lists);
     });
     
     
-}    
+}
 
 const Container = styled.div`
     top: 0;
@@ -318,13 +225,12 @@ const Text = styled.div`
 //     gap : 50px;
 // `;
 const Circle = styled.div`
-  width: 80vw;
-  height: 80vw;
-  background-color: #ffffff;
-  border-radius: 100rem;
-  position: absolute;
-  top: 44rem;
-  left: 12rem;
+    width: 100vw;
+    height: 100vw;
+    background-color: rgb(255, 255, 255);
+    border-radius: 100rem;
+    position: absolute;
+    top: 53rem;
 `;
 
 // 이전 버튼
@@ -387,7 +293,7 @@ const Next = styled.div`
 	height: 60px;
 	position: absolute;
 	top: 70%;
-	right: 53.5%;
+	right: 52%;
 	transform: translate(20vw, -50%);
 	display: flex;
 	align-items: center;
