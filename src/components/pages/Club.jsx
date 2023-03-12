@@ -26,8 +26,8 @@ function Club(props) {
         <div style={{ padding: "16rem 0", marginRight: "5rem" }}>
           <Title>MIRIM SOCIETY</Title>
           <Content>
-            미림마이스터고만의 자유로운 전공 동아리입니다. 총 8개의 동아리가
-            있고,
+            미림마이스터고만의 자유로운 전공 동아리입니다. 총{" "}
+            {props.clubs.length}개의 동아리가 있고,
             <br />각 동아리들은 정해진 날에 모여 활동합니다.
             <br />
             선후배, 각 학과 간의친목을 도모할 수 있는 자리입니다.
@@ -88,6 +88,12 @@ const ContentBox = styled.div`
   border: 0.5px black solid;
 `;
 function Modal(props) {
+  const history = useHistory();
+  function toDetailPage(key) {
+    history.replace(`club/detail/${key}`);
+    window.location.reload();
+  }
+
   return (
     <>
       {props.clubs.map(function (a, i) {
