@@ -2,9 +2,11 @@ import React, { useState, Component } from "react";
 import { Carousel } from "react-circular-carousel";
 import styled from "styled-components";
 import image from "../../img/first.png";
-import { useHistory } from "react-router-dom";
+import { useHistory, useParams } from "react-router-dom";
 
 function ClubExpl(props) {
+  let { id } = useParams();
+  console.log(id);
   const history = useHistory();
 
   function toHome() {
@@ -12,21 +14,12 @@ function ClubExpl(props) {
     window.location.reload();
   }
 
-  const settings = {
-    height: 100,
-    dots: true,
-    infinite: true,
-    speed: 500,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-  };
-
   return (
     <Container>
       <HomeButton onClick={toHome}>home</HomeButton>
       <div style={{ float: "left" }}>
         <div style={{ padding: "12rem 0", marginRight: "5rem" }}>
-          <Title>MIVEN</Title>
+          <Title>{props.clubs[id]}</Title>
           <Content>
             미림벤처창업반에서는 선배, 친구들과 함께 여러 공모전에 참여합니다.
             동아리 활동을 통해 공모전 참가 경험 및 발표 경험 등을 쌓을 수
@@ -38,15 +31,13 @@ function ClubExpl(props) {
           </Content>
         </div>
       </div>
-      <div style={{ top: "100rem" }}>
-        <Carousel settings={settings}>
-          <Img src={image} style={{ rotate: 90 }}></Img>
-          <Img src={image}></Img>
-          <Img src={image}></Img>
-          <Img src={image}></Img>
-          <Img src={image}></Img>
-        </Carousel>
-      </div>
+      <Carousel height={320} width={120} spacing={500} gab={20} offset={36}>
+        <Img src={image} style={{ transform: "rotate(90deg)" }}></Img>
+        <Img src={image}></Img>
+        <Img src={image}></Img>
+        <Img src={image}></Img>
+        <Img src={image}></Img>
+      </Carousel>
     </Container>
   );
 }

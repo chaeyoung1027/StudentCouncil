@@ -11,23 +11,12 @@ import image5 from "../../img/5.jpg";
 function Club(props) {
   const history = useHistory();
 
-  let [동아리, 동아리이름] = useState([
-    "MAS",
-    "JS STUDY",
-    "D!DA",
-    "CPU(C Project with yoU",
-    "APP&ME",
-    "우친동(우리 친해요 동아리)",
-    "게임메이커(Game Maker)",
-  ]);
-
   let images = [image0, image1, image2, image3, image4, image5];
 
   function handler2() {
     history.replace("/");
     window.location.reload();
   }
-
   return (
     <Container className="body">
       <HomeButton onClick={handler2}>home</HomeButton>
@@ -45,7 +34,7 @@ function Club(props) {
       </div>
       <RightSideBar className="rightBar">
         {/* 모달. map사용. 배열에 사진링크 넣고 삽입. */}
-        <Modal 동아리={동아리} images={images} />
+        <Modal clubs={props.clubs} images={images} />
       </RightSideBar>
     </Container>
   );
@@ -97,20 +86,19 @@ const ContentBox = styled.div`
   border: 0.5px black solid;
 `;
 function Modal(props) {
-  // let[title, setTitle] = useState(0);
   return (
     <>
-      {props.동아리.map(function (a, i) {
+      {props.clubs.map(function (a, i) {
         return (
           <>
-            {i % 2 == 1 ? (
+            {i % 2 === 1 ? (
               <div style={{ display: "flex" }}>
                 <ImageBox className="ImageBox" src={props.images[i]} />
-                <ContentBox>{props.동아리[i]}</ContentBox>
+                <ContentBox>{props.clubs[i]}</ContentBox>
               </div>
             ) : (
               <div style={{ display: "flex" }}>
-                <ContentBox>{props.동아리[i]}</ContentBox>
+                <ContentBox>{props.clubs[i]}</ContentBox>
                 <ImageBox className="ImageBox" src={props.images[i]} />
               </div>
             )}
