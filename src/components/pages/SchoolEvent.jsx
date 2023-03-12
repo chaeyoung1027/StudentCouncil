@@ -26,7 +26,7 @@ function SchoolEvent(props) {
     <Container>
       <HomeButton onClick={handler2}>Home</HomeButton>
       <TitleText>행사 이름</TitleText>
-      <ContextText>동아리 설명을 합니다.</ContextText>
+      <ContextText>학교 행사 설명을 합니다.</ContextText>
       <Carousel height={320} width={120} spacing={500} gab={20} offset={36} >
         <Img src={image}></Img>
         <Img src={image}></Img>
