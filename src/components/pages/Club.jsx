@@ -9,11 +9,22 @@ import image4 from "../../img/group/4.jpg";
 import image5 from "../../img/group/5.jpg";
 import image6 from "../../img/group/6.jpg";
 import image7 from "../../img/group/7.jpg";
+import image8 from "../../img/group/8.jpg";
 
 function Club(props) {
   const history = useHistory();
 
-  let images = [image0, image1, image2, image3, image4, image5, image6, image7];
+  let images = [
+    image0,
+    image1,
+    image2,
+    image3,
+    image4,
+    image5,
+    image6,
+    image7,
+    image8,
+  ];
 
   function handler2() {
     history.replace("/");
@@ -26,8 +37,8 @@ function Club(props) {
         <div style={{ padding: "16rem 0", marginRight: "5rem" }}>
           <Title>MIRIM SOCIETY</Title>
           <Content>
-            미림마이스터고만의 자유로운 전공 동아리입니다. 총 8개의 동아리가
-            있고,
+            미림마이스터고만의 자유로운 전공 동아리입니다. 총{" "}
+            {props.clubs.length}개의 동아리가 있고,
             <br />각 동아리들은 정해진 날에 모여 활동합니다.
             <br />
             선후배, 각 학과 간의친목을 도모할 수 있는 자리입니다.
@@ -77,6 +88,7 @@ const ImageBox = styled.img`
   height: 300px;
   background-color: black;
   border: 0.5px black solid;
+  object-fit: cover;
 `;
 const ContentBox = styled.div`
   width: 360px;
@@ -88,6 +100,11 @@ const ContentBox = styled.div`
   border: 0.5px black solid;
 `;
 function Modal(props) {
+  const history = useHistory();
+  function toDetailPage(key) {
+    history.replace(`club/detail/${key}`);
+    window.location.reload();
+  }
   return (
     <>
       {props.clubs.map(function (a, i) {
