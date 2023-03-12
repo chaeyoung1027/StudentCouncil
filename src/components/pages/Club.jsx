@@ -9,11 +9,22 @@ import image4 from "../../img/group/4.jpg";
 import image5 from "../../img/group/5.jpg";
 import image6 from "../../img/group/6.jpg";
 import image7 from "../../img/group/7.jpg";
+import image8 from "../../img/group/8.jpg";
 
 function Club(props) {
   const history = useHistory();
 
-  let images = [image0, image1, image2, image3, image4, image5, image6, image7];
+  let images = [
+    image0,
+    image1,
+    image2,
+    image3,
+    image4,
+    image5,
+    image6,
+    image7,
+    image8,
+  ];
 
   function handler2() {
     history.replace("/");
@@ -77,6 +88,7 @@ const ImageBox = styled.img`
   height: 300px;
   background-color: black;
   border: 0.5px black solid;
+  object-fit: cover;
 `;
 const ContentBox = styled.div`
   width: 360px;
@@ -93,7 +105,6 @@ function Modal(props) {
     history.replace(`club/detail/${key}`);
     window.location.reload();
   }
-
   return (
     <>
       {props.clubs.map(function (a, i) {
