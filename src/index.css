@@ -32,3 +32,21 @@ code {
     overflow: auto;
   }
 }
+
+/* HomeIntent 슬라이드 부분 */
+.prev {
+	font: 11px/1 "arial";
+	color: #fff;
+	opacity: 1;
+	transform: translateX(30%);
+	transition: 0.5s;
+}
+
+.next {
+	font: 11px/1 "arial";
+	color: #fff;
+	opacity: 1;
+	transform: translateX(-30%);
+	transition: 0.5s;	
+}
+
