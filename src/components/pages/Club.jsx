@@ -1,17 +1,19 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
-import image0 from "../../img/0.jpg";
-import image1 from "../../img/1.jpg";
-import image2 from "../../img/2.jpg";
-import image3 from "../../img/3.jpg";
-import image4 from "../../img/4.jpg";
-import image5 from "../../img/5.jpg";
+import image0 from "../../img/group/0.jpg";
+import image1 from "../../img/group/1.jpg";
+import image2 from "../../img/group/2.jpg";
+import image3 from "../../img/group/3.jpg";
+import image4 from "../../img/group/4.jpg";
+import image5 from "../../img/group/5.jpg";
+import image6 from "../../img/group/6.jpg";
+import image7 from "../../img/group/7.jpg";
 
 function Club(props) {
   const history = useHistory();
 
-  let images = [image0, image1, image2, image3, image4, image5];
+  let images = [image0, image1, image2, image3, image4, image5, image6, image7];
 
   function handler2() {
     history.replace("/");
@@ -24,7 +26,7 @@ function Club(props) {
         <div style={{ padding: "16rem 0", marginRight: "5rem" }}>
           <Title>MIRIM SOCIETY</Title>
           <Content>
-            미림마이스터고만의 자유로운 전공 동아리입니다. 총 NN개의 동아리가
+            미림마이스터고만의 자유로운 전공 동아리입니다. 총 8개의 동아리가
             있고,
             <br />각 동아리들은 정해진 날에 모여 활동합니다.
             <br />

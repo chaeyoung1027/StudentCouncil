@@ -16,6 +16,7 @@ function App() {
     "APP&ME",
     "우친동(우리 친해요 동아리)",
     "게임메이커(Game Maker)",
+    "Creative Design",
   ];
 
   return (
