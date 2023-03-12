@@ -1,34 +1,32 @@
-@import url("https://fonts.googleapis.com/css2?family=Noto+Sans&family=Noto+Sans+KR&display=swap");
-
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;700&family=Noto+Sans:wght@100;200;400;500&display=swap');
 body {
-  margin: 0;
-  font-family: "Noto Sans", sans-serif;
-  font-family: "Noto Sans KR", sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  overflow-x:hidden;
+    margin: 0;
+    font-family: 'Noto Sans', sans-serif;
+    font-family: 'Noto Sans KR', sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
-    monospace;
+    font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 .rightBar::-webkit-scrollbar {
-  display: none;
+    display: none;
 }
 
 .ImageBox {
-  object-fit: contain;
+    object-fit: contain;
 }
 
 .ImageBox:hover {
-  transition: 0.5s;
-  background-color: red;
+    transition: 0.5s;
+    background-color: red;
 }
 
-@media screen and (max-width: 1784px) {
-  .body {
-    overflow: auto;
-  }
+@media screen and (max-width: 1900px) {
+    .body {
+        overflow: auto;
+    }
 }

@@ -4,6 +4,14 @@ section {
     height: 100%;
 }
 
+.two {
+    -webkit-mask-image: url('../../img/back.png');
+    mask-image: url('../../img/back.png');
+    mask-size: cover;
+    width: 20rem;
+    height: 30vh;
+}
+
 section::after {
     position: absolute;
     bottom: 0;
