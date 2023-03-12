@@ -21,6 +21,10 @@ section::after {
     height: 80%;
 }
 
+body::-webkit-scrollbar {
+    display: none;
+}
+
 section h1 {
     position: absolute;
     top: 50%;
