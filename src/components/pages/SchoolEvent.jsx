@@ -3,56 +3,68 @@ import { Carousel } from 'react-circular-carousel'
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import image from '../../img/first.png';
+import image2 from '../../img/about.png';
 
 function SchoolEvent(props) {
 
     const history = useHistory();
 
-    let [행사, 행사명] = useState([
-      "느린 우체통",
-      "학생회 소통망 이벤트",
-      "롤링페이퍼",
-      "CA 발표회",
-      "국군위문병",
-      "체육대회",
-      "학교 폭력/흡연 예방/선플/안전사고 예방 캠페인",
-    ]);
+    let images = [
+      image,
+      image2,
+    ];
 
     function handler2() {
         history.replace("/");
         window.location.reload();
     }
+
   return (
-    <Container>
+    <LeftContainer>
       <HomeButton onClick={handler2}>Home</HomeButton>
       <TitleText>행사 이름</TitleText>
       <ContextText>학교 행사 설명을 합니다.</ContextText>
-      <Carousel height={320} width={120} spacing={500} gab={20} offset={36} >
-        <Img src={image}></Img>
-        <Img src={image}></Img>
-        <Img src={image}></Img>
-        <Img src={image}></Img>
-        <Img src={image}></Img>
-      </Carousel>
-      <BorderCircle />
-      <Circle />  
-     </Container>
+      <RightSideBar className="rightBar">
+        {/* 모달. map사용. 배열에 사진링크 넣고 삽입. */}
+        <Modal images={images} />
+      </RightSideBar>
+     </LeftContainer>
   );
 }
 
+const RightSideBar = styled.div`
+  float: left;
+  width: 47.2%;
+  height: 100%;
+  overflow: scroll;
+`;
 const HomeButton = styled.button`
   cursor: pointer;
+  padding: 0.4rem 1rem;
   background-color: #f3f3f3;
+  opacity: 0.5;
+  color: black;
   border: none;
   float: left;
+  border-radius: 0.3rem;
+  margin: 1.5rem;
 `;
-const Container = styled.div`
+const LeftContainer = styled.div`
   top: 0;
   width: 100vw;
   overflow: hidden;
   height: 100vh;
   background-color: #f3f3f3;
   overflow: hidden;
+`;
+const RightContainer = styled.div`
+  /* height: 50.5rem; */
+  width: 100vw;
+  height: 100vh;
+  // overflow: hidden;
+  top: 0;
+  background-color: #f3f3f3;
+  /* padding: 4rem; */
 `;
 const Circle = styled.div`
   width: 40vw;
@@ -96,5 +108,19 @@ const ContextText = styled.div`
     margin-left: 5vw;
     font-family: 'Noto Sans KR', sans-serif;
 `;
+
+function Modal(props) {
+  return (
+    <RightContainer>
+      <Carousel height={500} width={300} spacing={10} gab={50} offset={50}>
+        <Img src={image}></Img>
+        <Img src={image}></Img>
+        <Img src={image}></Img>
+        <Img src={image}></Img>
+        <Img src={image}></Img>
+      </Carousel>
+    </RightContainer>
+  )
+}
 
 export default SchoolEvent;
