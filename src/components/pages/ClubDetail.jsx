@@ -1,14 +1,14 @@
 import React, { useState, Component } from "react";
 import { Carousel } from "react-circular-carousel";
 import styled from "styled-components";
-import image from "../../img/first.png";
 import { useHistory, useParams } from "react-router-dom";
+// import "react-circular-carousel/dist/index.css";
 
-function ClubExpl(props) {
+function ClubDetail(props) {
   let { id } = useParams();
-  console.log(id);
   const history = useHistory();
 
+  console.log(props.clubs[0]); //동아리 이름
   function toHome() {
     history.replace("/");
     window.location.reload();
@@ -16,27 +16,25 @@ function ClubExpl(props) {
 
   return (
     <Container>
-      <HomeButton onClick={toHome}>home</HomeButton>
+      <HomeButton
+        onClick={() => {
+          history.goBack();
+        }}
+      >
+        home
+      </HomeButton>
       <div style={{ float: "left" }}>
-        <div style={{ padding: "12rem 0", marginRight: "5rem" }}>
+        <div style={{ padding: "10rem 0", marginRight: "5rem" }}>
           <Title>{props.clubs[id]}</Title>
-          <Content>
-            미림벤처창업반에서는 선배, 친구들과 함께 여러 공모전에 참여합니다.
-            동아리 활동을 통해 공모전 참가 경험 및 발표 경험 등을 쌓을 수
-            있습니다. 또 다양한 공모전 참여 활동을 통해 문제해결능력 상승에도
-            많은 도움이 됩니다. <br />
-            <br />
-            이러한 과정 속에서 선배, 후배, 친구들과 자연스레 친해져 학창 시절
-            속가장 큰 추억으로 동아리 활동이 자리매김합니다.
-          </Content>
+          <Content>{props.clubsContent[id]}</Content>
         </div>
       </div>
-      <Carousel height={320} width={120} spacing={500} gab={20} offset={36}>
-        <Img src={image} style={{ transform: "rotate(90deg)" }}></Img>
-        <Img src={image}></Img>
-        <Img src={image}></Img>
-        <Img src={image}></Img>
-        <Img src={image}></Img>
+      <Carousel height={500} width={300} spacing={10} gab={50} offset={50}>
+        <Img src={process.env.PUBLIC_URL + "/0/1.png"}></Img>
+        <Img src={process.env.PUBLIC_URL + "/0/1.png"}></Img>
+        <Img src={process.env.PUBLIC_URL + "/0/1.png"}></Img>
+        <Img src={process.env.PUBLIC_URL + "/0/1.png"}></Img>
+        <Img src={process.env.PUBLIC_URL + "/0/1.png"}></Img>
       </Carousel>
     </Container>
   );
@@ -60,22 +58,27 @@ const HomeButton = styled.button`
   margin: 1.5rem;
 `;
 const Title = styled.p`
-  font-size: 120px;
+  // 동아리 이름
+  font-size: 5vw;
   font-weight: bold;
   letter-spacing: 1px;
   color: white;
   margin: 0 0 5rem 0;
+  white-space: pre-wrap; //\n 줄바꿈 개행이 먹도록 추가함.
 `;
 const Content = styled.p`
+  //동아리 설명
   width: 40rem;
   height: 20rem;
-  font-size: 26px;
+  font-size: 1.5vw;
   color: white;
   letter-spacing: 0.1rem;
+  white-space: pre-wrap; //\n 줄바꿈 개행이 먹도록 추가함.
+  text-overflow: ellipsis;
 `;
 const Img = styled.img`
   widht: 100%;
   height: 100%;
   object-fit: cover;
 `;
-export default ClubExpl;
+export default ClubDetail;
