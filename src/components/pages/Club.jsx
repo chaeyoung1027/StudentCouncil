@@ -101,10 +101,12 @@ const ContentBox = styled.div`
 `;
 function Modal(props) {
   const history = useHistory();
-  function toDetailPage(key) {
+
+  function toDetailPage(key) { //ClubDetail페이지로 이동함
     history.replace(`club/detail/${key}`);
     window.location.reload();
   }
+
   return (
     <>
       {props.clubs.map(function (a, i) {
@@ -112,13 +114,13 @@ function Modal(props) {
           <>
             {i % 2 === 1 ? (
               <div style={{ display: "flex" }}>
-                <ImageBox className="ImageBox" src={props.images[i]} />
-                <ContentBox>{props.clubs[i]}</ContentBox>
+                <ImageBox className="ImageBox" src={props.images[i]} onClick={() => toDetailPage(i)}/>
+                <ContentBox onClick={() => toDetailPage(i)}>{props.clubs[i]}</ContentBox>
               </div>
             ) : (
               <div style={{ display: "flex" }}>
-                <ContentBox>{props.clubs[i]}</ContentBox>
-                <ImageBox className="ImageBox" src={props.images[i]} />
+                <ContentBox onClick={() => toDetailPage(i)}>{props.clubs[i]}</ContentBox>
+                <ImageBox className="ImageBox" src={props.images[i]} onClick={() => toDetailPage(i)}/>
               </div>
             )}
           </>
