@@ -31,6 +31,18 @@ function App() {
     "크리에이티브의 활동 \n다양한 디자인의 경험을 해볼 수 있어요! \n• 디자인 제작 과정으로 자연스럽게 모이는 포트폴리오를 얻을 수 있어요!\n• 공모전을 나가고 싶을 때 선배들과 함께 할 수 있어요!\n• 제작 과정에서 전공지식이나 실무적인 꿀팁을 배울 수 있어요!\n• 자신이 원하는 디자인을 하고 기획, 판매에서 기부까지 다양한 경험으로 디자인 실력을 키울 수 있어요!\n 크리에이티브만의 매력 \n• 선배들에게 배우는 전공 툴과 디자인 팁 득템 가능!\n• 자유롭고 가족 같은 분위기로 사이 좋은 선후배 관계!\n• 내가 만든 디자인이 내 손에!\n• 같은 과 선후배로 더욱 따듯한 마음!\n• 제품으로 판매와 수익 기부의 뿌듯함과 행복함!",
     "미림벤처창업반에서는 선배, 친구들과 함께 \n여러 공모전에 참여합니다 동아리 활동을 통해 \n공모전 참가 경험 및 발표 경험 등을 쌓을 수 있습니다. \n또 다양한 공모전 참여 활동을 통해 문제해결능력 상승에도 많은 도움이 됩니다. \n\n이러한 과정 속에서 선배, 후배, 친구들과 자연스레 친해져 학창 시절속가장 큰 추억으로 동아리 활동이 자리매김합니다.",
   ];
+
+  let clubsLink = [
+        "https://www.facebook.com/profile.php?id=100080336959216&mibextid=LQQJ4d",
+        "https://instagram.com/js_mirim?igshid=YmMyMTA2M2Y=",
+        "https://instagram.com/d.da__?igshid=YmMyMTA2M2Y=",
+        "https://instagram.com/cpu_mirim?igshid=YmMyMTA2M2Y=",
+        "https://www.instagram.com/app_and_me/?igshid=YmMyMTA2M2Y%3D",
+        "https://instagram.com/mirim_woochindong?igshid=YmMyMTA2M2Y=",
+        "https://www.instagram.com/gamemakerrrr/",
+        "https://instagram.com/crea.tive20_?igshid=YmMyMTA2M2Y=",
+        "https://www.instagram.com/2023.miven/",
+  ]
   return (
     <Router>
       <Switch>
@@ -39,7 +51,7 @@ function App() {
         <Route
           path="/club/detail/:id"
           render={() => (
-            <ClubDetail clubs={clubs} clubsContent={clubsContent} />
+            <ClubDetail clubs={clubs} clubsContent={clubsContent} clubsLink={clubsLink} />
           )}
         />
         <Route path="/club" render={() => <Club clubs={clubs} />} />
