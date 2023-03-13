@@ -52,19 +52,9 @@ function About(props) {
             <Container></Container>
             <Box style={{position: 'absolute', top: '0', width: '100vw', height: '100vh'}}>
               <div style={{color : 'white', fontWeight: 'bold', fontSize: '2.5rem',letterSpacing: '0.7rem', marginTop: '-15rem', marginBottom: '10rem'}}>Activity.</div>
-              <Box
-                style={{
-                  width: 400,
-                  height: 400,
-                  backgroundColor: 'black',
-                 '&:hover': {
-                    backgroundColor: 'primary.main',
-                    opacity: [0.9, 0.8, 0.7],
-                  },
-                }}
-              />
+              <Box style={{width: 400, height: 400, backgroundColor: 'black', '&:hover': { backgroundColor: 'primary.main' }}}/>
               <div style={{color: 'white', fontSize: '1.6rem', marginTop: '-20rem', marginBottom: '2rem', fontWeight: 'bold'}}>Main event</div>
-              <div style={{color: 'white', fontSize: '1rem', width: '400px', textAlign: 'center', opacity: '0.6'}}>학생회 소통망 이벤트
+              <div style={{color: 'white', fontSize: '1rem', width: '400px', textAlign: 'center', opacity: '0.6', fontWeight: 'normal'}}>학생회 소통망 이벤트
                   <br/>학생회 느린우체통 이벤트
                   <br/>미림 ‘대신 전해드립니다.’ SNS 운영 
                   <br/>롤링페이퍼
