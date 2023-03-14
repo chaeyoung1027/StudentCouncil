@@ -60,7 +60,7 @@ const Container = styled.div`
   top: 0;
   background-color: #f3f3f3;
   /* padding: 4rem; */
-  @media screen and (max-width: 1700px){
+  @media screen and (max-width: 1776px){
     height: 400vh;
     overflow: hidden;
   }
@@ -69,9 +69,8 @@ const RightSideBar = styled.div`
   float: left;
   height: 100%;
   overflow: scroll;
-  margin-left: 10.5vw;
-  @media screen and (max-width: 1700px){
-    margin-left: 1.2vw;
+  @media screen and (max-width: 1776px){
+    margin-left: 5vw;
   }
   @media screen and (max-width: 950px){
     margin-left: 0;
@@ -90,7 +89,7 @@ const HomeButton = styled.button`
 const Writing = styled.div`
   padding: 16rem 0;
   margin-right: 2rem;
-  @media screen and (max-width: 950px){
+  @media screen and (max-width: 1060px){
     padding: 16rem 2rem;
     margin: 0;
   }
