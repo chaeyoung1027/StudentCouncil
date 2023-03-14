@@ -5,6 +5,7 @@ import {useState, useRef} from 'react';
 // import { useHistory } from "react-router-dom";
 // import Card from "../home-ui/Card";
 import { Link } from 'react-router-dom' //****
+import { useHistory } from "react-router-dom";
 
 function HomeIntent(props) {
     const [angle, setAngle] = useState(45);
@@ -47,7 +48,14 @@ function HomeIntent(props) {
         activation(active, lists.current);
     }
 
+    //useHistory는 라우터를 사용할 때 사용하는 훅이다.
+    //즉, history.replace를 사용하면 주소창의 주소가 변경되고, window.location.reload()를 사용하면 페이지가 새로고침된다.
+    const history = useHistory();
+
     function go() {
+        //아래 코드의 history.replace("/club");은 주소창의 주소를 /club으로 변경한다.
+        history.replace("/club");
+        //window.location.reload()는 페이지를 새로고침한다.
         window.location.reload();
     } 
 

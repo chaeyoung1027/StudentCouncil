@@ -27,7 +27,7 @@ function Club(props) {
   ];
 
   function handler2() {
-    history.replace("/");
+    history.replace("./homeintent");
     window.location.reload();
   }
   return (
