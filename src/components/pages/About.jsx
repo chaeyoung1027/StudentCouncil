@@ -18,7 +18,7 @@ function About(props) {
             <Container style={{backgroundColor: 'black', opacity: '0.7', height: '100vh',width: '30vw', margin: '0 auto'}}></Container>
             <Box style={{position: 'absolute', top: '0', width: '100vw', height: '100vh', marginTop: '-2rem'}}>
               <div style={{color : 'white', fontWeight: 'bold', fontSize: '2rem',letterSpacing: '0.2rem', marginBottom: "7rem"}}>Intro.</div>
-              <div style={{color : 'white', fontWeight: 'lighter', fontSize: '0.9rem', width: "21rem", lineHeight: "1.5rem"}}>
+              <div style={{color : 'white', fontWeight: 'lighter', fontSize: '0.9rem', width: "21rem", lineHeight: "1.5rem", opacity: '0.7'}}>
                 안녕하세요. 32기 학생회입니다.<br/>
                 저희는 여러분과의 소통을 위하여 많은 이야기를 들었고, 더 편안한 미림을 위한 공약을 입으로 약속드렸습니다.<br/>
                 여러분의 말에 더욱 집중하며 사소한 것이라도<br/>
@@ -51,9 +51,16 @@ function About(props) {
         <section id="section04" class="demo" style={{backgroundImage: `url(${about})`, objectFit: 'none' }}>
             <Container></Container>
             <Box style={{position: 'absolute', top: '0', width: '100vw', height: '100vh'}}>
-              <div style={{color : 'white', fontWeight: 'bold', fontSize: '2.5rem',letterSpacing: '1rem'}}>ABOUT</div>
-              <div style={{color : 'white', fontWeight: 'lighter', fontSize: '0.9rem'}}>32기 학생회</div>
-            </Box> 
+              <div style={{color : 'white', fontWeight: 'bold', fontSize: '2.5rem',letterSpacing: '0.7rem', marginTop: '-15rem', marginBottom: '10rem'}}>Activity.</div>
+              <Box style={{width: 400, height: 400, backgroundColor: 'black', '&:hover': { backgroundColor: 'primary.main' }}}/>
+              <div style={{color: 'white', fontSize: '1.6rem', marginTop: '-20rem', marginBottom: '2rem', fontWeight: 'bold'}}>Main event</div>
+              <div style={{color: 'white', fontSize: '1rem', width: '400px', textAlign: 'center', opacity: '0.6', fontWeight: 'normal'}}>학생회 소통망 이벤트
+                  <br/>학생회 느린우체통 이벤트
+                  <br/>미림 ‘대신 전해드립니다.’ SNS 운영 
+                  <br/>롤링페이퍼
+                  <br/>동아리 발표회
+              </div>
+            </Box>
             <a href="#section05"><span></span>Scroll</a>
         </section>
         <section id="section05" class="demo" style={{backgroundImage: `url(${about})`, objectFit: 'none' }}>

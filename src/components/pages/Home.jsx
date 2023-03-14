@@ -13,7 +13,7 @@ function Home(props) {
     const history = useHistory();
 
     function handler2() {
-        history.replace("/homeintent");
+        history.replace("/club");
         window.location.reload();
     }
     return (

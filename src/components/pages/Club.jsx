@@ -83,12 +83,22 @@ const Content = styled.p`
   font-size: 26px;
   color: #475467;
 `;
-const ImageBox = styled.img`
+const ImageBoxAnchor = styled.a`
+  display: block;
+  overflow: hidden;
+`;
+const ImageBox = styled.div`
   width: 360px;
   height: 300px;
   background-color: black;
   border: 0.5px black solid;
-  object-fit: cover;
+  background-size: cover; //이미지 꽉차게
+  background-position: center; //이미지 가운데 정렬
+  transition: 0.3s;
+  &:hover,
+  &:focus {
+    transform: scale(1.2);
+  }
 `;
 const ContentBox = styled.div`
   width: 360px;
@@ -101,10 +111,13 @@ const ContentBox = styled.div`
 `;
 function Modal(props) {
   const history = useHistory();
+
   function toDetailPage(key) {
+    //ClubDetail페이지로 이동함
     history.replace(`club/detail/${key}`);
     window.location.reload();
   }
+
   return (
     <>
       {props.clubs.map(function (a, i) {
@@ -112,13 +125,29 @@ function Modal(props) {
           <>
             {i % 2 === 1 ? (
               <div style={{ display: "flex" }}>
-                <ImageBox className="ImageBox" src={props.images[i]} />
-                <ContentBox>{props.clubs[i]}</ContentBox>
+                <ImageBoxAnchor>
+                  <ImageBox
+                    className="ImageBox"
+                    style={{ backgroundImage: `url(${props.images[i]})` }}
+                    onClick={() => toDetailPage(i)}
+                  />
+                </ImageBoxAnchor>
+                <ContentBox onClick={() => toDetailPage(i)}>
+                  {props.clubs[i]}
+                </ContentBox>
               </div>
             ) : (
               <div style={{ display: "flex" }}>
-                <ContentBox>{props.clubs[i]}</ContentBox>
-                <ImageBox className="ImageBox" src={props.images[i]} />
+                <ContentBox onClick={() => toDetailPage(i)}>
+                  {props.clubs[i]}
+                </ContentBox>
+                <ImageBoxAnchor>
+                  <ImageBox
+                    className="ImageBox"
+                    style={{ backgroundImage: `url(${props.images[i]})` }}
+                    onClick={() => toDetailPage(i)}
+                  />
+                </ImageBoxAnchor>
               </div>
             )}
           </>
