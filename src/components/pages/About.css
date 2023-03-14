@@ -11,6 +11,10 @@ section {
     height: 100vh;
 }
 
+#container::-webkit-scrollbar {
+    display: none;
+}
+
 .two {
     -webkit-mask-image: url('../../img/back.png');
     mask-image: url('../../img/back.png');
