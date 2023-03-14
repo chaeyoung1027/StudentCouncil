@@ -31,22 +31,6 @@ code {
 } */
 
 /* HomeIntent 슬라이드 부분 */
-.prev {
-	font: 11px/1 "arial";
-	color: #fff;
-	opacity: 1;
-	transform: translateX(30%);
-	transition: 0.5s;
-}
-
-.next {
-	font: 11px/1 "arial";
-	color: #fff;
-	opacity: 1;
-	transform: translateX(-30%);
-	transition: 0.5s;	
-}
-
 /* @charset "utf-8"; */
 
 /* 3단계 */
@@ -111,8 +95,8 @@ figure section article { /*개별 음악 플레이어 패널*/
 	width: 100%;
     height: 72%;
     position: absolute;
-    top: -125px;
-    left: -23px;
+    top: -107px;
+    left: -16px;
 }
 figure section article .inner { /*음악 플레이어 패널 콘텐츠 그룹*/
 	width: 100%;
@@ -240,6 +224,32 @@ figure section article .inner .pic.on::after {
 }
 figure section article .inner .pic.on::before {
 	animation: ani2 4s linear infinite;
+}
+
+figure .btnPrev span {
+	font: 11px/1 "arial";
+	color: #fff;
+	opacity: 1;
+	transform: translateX(30%);
+	transition: 0.5s;
+}
+
+figure .btnPrev:hover span {
+	opacity: 0;
+	transform: translateX(100%);
+}
+
+figure .btnNext span {
+	font: 11px/1 "arial";
+	color: #fff;
+	opacity: 1;
+	transform: translateX(-30%);
+	transition: 0.5s;
+}
+
+figure .btnNext:hover span {
+	opacity: 0;
+	transform: translateX(-100%);
 }
 /* @media screen and (max-width: 1900px) {
     .body {
