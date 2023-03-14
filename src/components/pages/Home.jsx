@@ -25,7 +25,7 @@ function Home(props) {
 
     function handler2() {
         //아래 코드의 history.replace("/club");은 주소창의 주소를 /club으로 변경한다.
-        history.replace("/club");
+        history.replace("/homeintent");
         //window.location.reload()는 페이지를 새로고침한다.
         window.location.reload();
     }
