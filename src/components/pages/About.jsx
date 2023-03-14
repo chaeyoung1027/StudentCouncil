@@ -1,11 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
+//styled-components는 css를 사용할 수 있게 해주는 라이브러리이다.
 import styled from 'styled-components';
 import about from '../../img/about.png';
 import './About.css';
 
 function About(props) {
     return (
-      <>
+      <div id='container'>
         <section id="section01" class="demo" style={{backgroundImage: `url(${about})`, objectFit: 'none' }}>
             <Container style={{backgroundColor: 'black', opacity: '0.7', height: '100vh',width: '100vw'}}></Container>
             <Box style={{position: 'absolute', top: '0', width: '100vw', height: '100vh'}}>
@@ -81,7 +82,7 @@ function About(props) {
             </Box> 
             <a href="#section01"><span></span>Scroll</a>
         </section>
-        </>
+        </div>
     )
 }
 const Container = styled.div`

@@ -2,6 +2,19 @@ section {
     position: relative;
     width: 100%;
     height: 100%;
+    /* 스크롤링된 요소가 스크롤 컨테이너의 시작 부분에 정렬되도록 지정 */
+    scroll-snap-align: start
+}
+
+#container {
+    /* 스크롤 요소의 스냅 기능을 설정함.  */
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+}
+
+#container::-webkit-scrollbar {
+    display: none;
 }
 
 .two {
