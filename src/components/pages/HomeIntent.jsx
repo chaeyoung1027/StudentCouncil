@@ -4,6 +4,8 @@ import styled from 'styled-components';
 import {useState, useRef} from 'react';
 // import { useHistory } from "react-router-dom";
 // import Card from "../home-ui/Card";
+import { Link } from 'react-router-dom' //****
+import { useHistory } from "react-router-dom";
 
 function HomeIntent(props) {
     const [angle, setAngle] = useState(45);
@@ -14,7 +16,7 @@ function HomeIntent(props) {
     const deg = 45; //각각의 article요소가 회전할 각도
     const len = lists.current.length - 1; //순번이 0부터 시작하므로 전체 개수에서 1을 빼줌
     let i = 0;
-    let numArray = [1,2,3,4,5,6,7,8];
+    let numArray = [2,3,4,5,6];
     
     //article의 개수만큼 반복
     // for (i = 0; i < lists.current.length; i++) {
@@ -46,6 +48,17 @@ function HomeIntent(props) {
         activation(active, lists.current);
     }
 
+    //useHistory는 라우터를 사용할 때 사용하는 훅이다.
+    //즉, history.replace를 사용하면 주소창의 주소가 변경되고, window.location.reload()를 사용하면 페이지가 새로고침된다.
+    const history = useHistory();
+
+    function go() {
+        //아래 코드의 history.replace("/club");은 주소창의 주소를 /club으로 변경한다.
+        history.replace("/club");
+        //window.location.reload()는 페이지를 새로고침한다.
+        window.location.reload();
+    } 
+
     return (
         <Container>
             <Text>TEXTINPUT</Text>
@@ -54,14 +67,61 @@ function HomeIntent(props) {
                     {numArray.map(function(item, index){
                             return(
                                 <>
+                                <Link to="./club">
+                                    <article onClick={go} className="first">
+                                        <div className="inner">
+                                            <div className="pic">
+                                            {/* <div className="dot"></div> */}
+                                        </div>
+                                            <div className="txt">
+                                                <h2>Go to Club</h2>
+                                                <p>go go</p>
+                                            </div>
+                                        </div>
+                                        <div className="text">
+                                            <p className="left">
+                                                <ul>
+                                                    <li className="item">Mirim</li>
+                                                    <li className="item">미림 동아리 발표회</li>
+                                                    <li className="item">미림 전공 동아리</li>
+                                                    <li className="item">미림 CA 동아리</li>
+                                                </ul>
+                                            </p>
+                                            <p className="right">
+                                                <p className="year">2023<br/>미림의 동아리</p>
+                                                <hr />
+                                                <p className="d">2023년 3월 15일</p>
+                                            </p>
+                                        </div>
+                                    </article>
+                                    </Link>
+                                    <article className="second">
+                                        <div className="inner">
+                                            <div className="pic">
+                                        </div>
+                                            <div className="txt">
+                                            <h2>Continue</h2>
+                                                <p>Upadating···</p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                    <article className="third">
+                                        <div className="inner">
+                                            <div className="pic">
+                                        </div>
+                                            <div className="txt">
+                                                <h2>Continue</h2>
+                                                <p>Upadating···</p>
+                                            </div>
+                                        </div>
+                                    </article>
                                     <article ref={(el)=>lists.current[index]=el} style={{transform: `rotate(${deg * item}deg) translateY(-100vh)`}} className={ item === 8 ? 'on' : ''}>
                                         <div className="inner">
                                             <div className="pic">
-                                            <div className="dot"></div>
                                         </div>
                                             <div className="txt">
                                                 <h2>Blizzards</h2>
-                                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                                                <p>Upadating ~</p>
                                             </div>
                                         </div>
                                     </article>
@@ -73,6 +133,7 @@ function HomeIntent(props) {
                 </figure>
                 {/* <Prev className='btnPrev' onClick={onIncrease}><span className='prev'>이전</span></Prev>
                 <Next className='btnNext' onClick={onDecrease}><span className='next'>다음</span></Next> */}
+                <Circle className="circle"></Circle>
         </Container>
         
     )
@@ -180,6 +241,30 @@ const Circle = styled.div`
     border-radius: 100rem;
     position: absolute;
     top: 53rem;
+    @media screen and (max-height:864px){
+        width: 100vw;
+        height: 100vw;
+        background-color: rgb(255, 255, 255);
+        border-radius: 100rem;
+        position: absolute;
+        top: 40rem;
+    }
+    @media screen and (max-height: 723px) {
+        width: 100vw;
+        height: 100vw;
+        background-color: rgb(255, 255, 255);
+        border-radius: 100rem;
+        position: absolute;
+        top: 39rem;
+    }
+    @media screen and (max-height:660px){
+        width: 100vw;
+        height: 100vw;
+        background-color: rgb(255, 255, 255);
+        border-radius: 100rem;
+        position: absolute;
+        top: 36rem;
+    }
 `;
 
 // 이전 버튼

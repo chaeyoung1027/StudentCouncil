@@ -72,7 +72,7 @@ figure .menu {
 figure > p {
 	position: absolute;
 	bottom: 7vh;
-	left: 50%;
+	left: 49%;
 	transform: translateX(-50%);
 	font: 12px/1 "arial";
 	color: #fff;
@@ -85,12 +85,68 @@ figure section { /*음악 플레이어 패널 프레임 그룹*/
 	width: 20vw;
 	height: 65vh;
 	position: absolute;
-	left: 50%;
+	left: 48%;
 	top: 140%;
 	margin-top: -25vh;
-	margin-left: -10vw;	
+	margin-left: -10vw;
 	transition: 1s; /* 11단계 */
 }
+
+@media screen and (max-height:1080px) {
+	figure section {
+		width: 20vw;
+		height: 65vh;
+		position: absolute;
+		left: 48%;
+		top: 140%;
+		margin-top: 536px;
+		margin-left: -10vw;
+		transition: 1s;
+	}
+}
+
+@media screen and (max-height:864px){
+	figure section {
+		width: 20vw;
+		height: 65vh;
+		position: absolute;
+		left: 48%;
+		top: 140%;
+		margin-top: 536px;
+		margin-left: -10vw;
+		transition: 1s;
+	}
+	
+}
+
+@media screen and (max-height: 723px) {
+   figure section {
+    width: 20vw;
+    height: 83vh;
+    position: absolute;
+    left: 48%;
+    top: 140%;
+    margin-top: 700px;
+    margin-left: -10vw;
+    transition: 1s;
+	}
+}
+
+@media screen and (max-height:660px){
+	figure section {
+		width: 20vw;
+		height: 85vh;
+		position: absolute;
+		left: 48%;
+		top: 140%;
+		margin-top: 789px;
+		margin-left: -10vw;
+		transition: 1s;
+	}
+	
+}
+
+
 figure section article { /*개별 음악 플레이어 패널*/
 	width: 100%;
     height: 72%;
@@ -98,6 +154,82 @@ figure section article { /*개별 음악 플레이어 패널*/
     top: -107px;
     left: -16px;
 }
+
+.first .pic {
+	background-image: url('../src/img/first.png');
+}
+/*  첫 번째 텍스트 */
+.text {
+	display: flex;
+    width: 205%;
+    justify-content: space-between;
+    height: 40%;
+    position: absolute;
+    top: 4%;
+    left: -60%;
+    color: #fff;
+	font-weight: 200;
+	font-size: 18px;
+	font-family: 'Noto Sans KR', sans-serif;
+	word-spacing: 2;
+}
+
+.left ul {
+	text-align: left;
+	list-style: none;
+	line-height: 2;
+}
+
+.right {
+	text-align: left;
+}
+
+.right .year {
+	font-size: 24px;
+}
+
+.right hr {
+	width: 130px;
+}
+
+.circle {
+	width: 100vw;
+    height: 100vw;
+    background-color: rgb(255, 255, 255);
+    border-radius: 100rem;
+    position: absolute;
+    top: 53rem;
+}
+
+/* 처음 세 개 */
+.first {
+	width: 100%;
+    height: 72%;
+    position: absolute;
+    top: -1687px;
+    left: -16px;
+}
+
+.second {
+	width: 100%;
+    height: 72%;
+    position: absolute;
+    top: -1581PX;
+    left: -592px;
+    transform: rotate(-25deg);
+	filter: brightness(50%);
+}
+
+.third {
+	width: 100%;
+    height: 72%;
+    position: absolute;
+    top: -1575PX;
+    left: 587px;
+    transform: rotate(25deg);
+	filter: brightness(50%);
+}
+
 figure section article .inner { /*음악 플레이어 패널 콘텐츠 그룹*/
 	width: 100%;
 	height: 100%;

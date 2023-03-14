@@ -8,7 +8,7 @@ function About(props) {
     return (
       <div id='container'>
         <section id="section01" class="demo" style={{backgroundImage: `url(${about})`, objectFit: 'none' }}>
-            <Container style={{backgroundColor: 'black', opacity: '0.7', height: '100vh',width: '100vw'}}></Container>
+            <Containers style={{backgroundColor: 'black', opacity: '0.7', height: '100vh',width: '100vw'}}></Containers>
             <Box style={{position: 'absolute', top: '0', width: '100vw', height: '100vh'}}>
               <div style={{color : 'white', fontWeight: 'bold', fontSize: '2.5rem',letterSpacing: '1rem'}}>ABOUT</div>
               <div style={{color : 'white', fontWeight: 'lighter', fontSize: '1.4rem'}}>32기 학생회</div>
@@ -19,7 +19,7 @@ function About(props) {
             <Container style={{backgroundColor: 'black', opacity: '0.7', height: '100vh',width: '30vw', margin: '0 auto'}}></Container>
             <Box style={{position: 'absolute', top: '0', width: '100vw', height: '100vh', marginTop: '-2rem'}}>
               <div style={{color : 'white', fontWeight: 'bold', fontSize: '2rem',letterSpacing: '0.2rem', marginBottom: "7rem"}}>Intro.</div>
-              <div style={{color : 'white', fontWeight: 'lighter', fontSize: '0.9rem', width: "21rem", lineHeight: "1.5rem", opacity: '0.7'}}>
+              <div style={{color : 'white', fontWeight: 'lighter', fontSize: '0.9rem', width: "21rem", lineHeight: "1.5rem", opacity: '0.7'}} className="t">
                 안녕하세요. 32기 학생회입니다.<br/>
                 저희는 여러분과의 소통을 위하여 많은 이야기를 들었고, 더 편안한 미림을 위한 공약을 입으로 약속드렸습니다.<br/>
                 여러분의 말에 더욱 집중하며 사소한 것이라도<br/>
@@ -37,13 +37,13 @@ function About(props) {
         <section id="section03" class="demo" style={{backgroundImage: `url(${about})`, objectFit: 'none' }}>
             <Container style={{backgroundColor: 'black', opacity: '2', height: '100vh',width: '70vw', marginLeft: '37rem'}} className = "two">
             </Container>
-            <div style = {{position: 'absolute', color: '#fff', marginTop: "-50rem", marginLeft: '25rem', fontSize: '2.5rem', letterSpacing: '1rem',}}>Value</div>
+            <div style = {{position: 'absolute', color: '#fff', marginTop: "-50rem", marginLeft: '25rem', fontSize: '2.5rem', letterSpacing: '1rem',}} className="value">Value</div>
             <div style = {{position: 'absolute', color: '#fff', marginTop: "-35rem", marginLeft: '86rem', fontSize: '2.5rem', letterSpacing: '1rem',}}>Activity.</div>
-            <Box2 style={{position: 'absolute', top: '0', width: '100vw', height: '100vh'}}>
-              <div style={{color : 'white', fontWeight: 'bold', fontSize: '1.6rem',letterSpacing: '1rem', textAlign: 'left', marginBottom: '1rem'}}>소통</div>
+            <Box2 style={{position: 'absolute', top: '0', width: '100vw', height: '100vh'}} className="talk">
+              <div style={{color : 'white', fontWeight: 'bold', fontSize: '1.6rem',letterSpacing: '1rem', textAlign: 'left', marginBottom: '1rem'}} >소통</div>
               <div style={{color : 'white', fontWeight: 'lighter', fontSize: '0.9rem', width: '20rem'}}>학생과 미림을 연결해주는 소통망의 일부로써 학생과 학생, 학생과 선생님, 선후배 등 미림 모두를 대상으로 마음을 전할 수 있도록 활동에 임했습니다.</div>
             </Box2>
-            <Box2 style={{position: 'absolute', top: '0', width: '100vw', height: '100vh', marginTop: '38rem'}}>
+            <Box2 style={{position: 'absolute', top: '0', width: '100vw', height: '100vh', marginTop: '38rem'}} className="chan">
               <div style={{color : 'white', fontWeight: 'bold', fontSize: '1.6rem',letterSpacing: '1rem', textAlign: 'left',marginBottom: '1rem'}}>청춘</div>
               <div style={{color : 'white', fontWeight: 'lighter', fontSize: '0.9rem', width: '20rem'}}>학생회는 한 번뿐인 학창 시절, 즐거운 추억이 많았으면 하는 바람을 동기 삼았습니다. 이에 많은 학생이 참여할 수 있는 즐거운 이벤트들을 기획하고 실천하였습니다.</div>
             </Box2> 
@@ -52,7 +52,7 @@ function About(props) {
         <section id="section04" class="demo" style={{backgroundImage: `url(${about})`, objectFit: 'none' }}>
             <Container></Container>
             <Box style={{position: 'absolute', top: '0', width: '100vw', height: '100vh'}}>
-              <div style={{color : 'white', fontWeight: 'bold', fontSize: '2.5rem',letterSpacing: '0.7rem', marginTop: '-15rem', marginBottom: '10rem'}}>Activity.</div>
+              <div style={{color : 'white', fontWeight: 'bold', fontSize: '2.5rem',letterSpacing: '0.7rem', marginTop: '-15rem', marginBottom: '10rem'}} className="Active">Activity.</div>
               <Box style={{width: 400, height: 400, backgroundColor: 'black', '&:hover': { backgroundColor: 'primary.main' }}}/>
               <div style={{color: 'white', fontSize: '1.6rem', marginTop: '-20rem', marginBottom: '2rem', fontWeight: 'bold'}}>Main event</div>
               <div style={{color: 'white', fontSize: '1rem', width: '400px', textAlign: 'center', opacity: '0.6', fontWeight: 'normal'}}>학생회 소통망 이벤트
@@ -85,10 +85,19 @@ function About(props) {
         </div>
     )
 }
+const Containers = styled.div`
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+`;
 const Container = styled.div`
   top: 0;
   width: 100vw;
   height: 100vh;
+  @media only screen and (max-width: 1328px) {
+     width: 50rem !important;;   
+    }
+  
 `;
 const Box = styled.div`
   top: 0;
@@ -98,6 +107,7 @@ const Box = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  
 `;
 
 const Box2 = styled.div`
@@ -107,5 +117,11 @@ const Box2 = styled.div`
   flex-direction: column;
   margin-left: 45rem;
   margin-top: 28rem;
+
+  @media only screen and (max-width: 1328px) {
+    background-color: black !important;
+    width: 20rem !important;
+    height: 10rem !important;
+    }
 `;
 export default About;
