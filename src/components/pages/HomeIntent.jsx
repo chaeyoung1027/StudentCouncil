@@ -241,15 +241,21 @@ const Circle = styled.div`
     border-radius: 100rem;
     position: absolute;
     top: 53rem;
-    @media screen and (max-width:2048px){
-        .circle {
-		width: 100vw;
-		height: 100vw;
-		background-color: rgb(255, 255, 255);
-		border-radius: 100rem;
-		position: absolute;
-		top: 40rem;
-	}
+    @media screen and (max-height:864px){
+        width: 100vw;
+        height: 100vw;
+        background-color: rgb(255, 255, 255);
+        border-radius: 100rem;
+        position: absolute;
+        top: 40rem;
+    }
+    @media screen and (max-height: 723px) {
+        width: 100vw;
+        height: 100vw;
+        background-color: rgb(255, 255, 255);
+        border-radius: 100rem;
+        position: absolute;
+        top: 39rem;
     }
 `;
 

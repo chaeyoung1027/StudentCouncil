@@ -69,8 +69,9 @@ const RightSideBar = styled.div`
   float: left;
   height: 100%;
   overflow: scroll;
+  margin-left: 10.5vw;
   @media screen and (max-width: 1700px){
-    margin-left: 13vw;
+    margin-left: 1.2vw;
   }
   @media screen and (max-width: 950px){
     margin-left: 0;
@@ -88,9 +89,9 @@ const HomeButton = styled.button`
 `;
 const Writing = styled.div`
   padding: 16rem 0;
-  margin-right: 5rem;
+  margin-right: 2rem;
   @media screen and (max-width: 950px){
-    padding: 16rem 5rem;
+    padding: 16rem 2rem;
     margin: 0;
   }
 `;
@@ -101,7 +102,7 @@ const Title = styled.p`
   color: #475467;
 `;
 const Content = styled.p`
-  font-size: 26px;
+  font-size: 30px;
   color: #475467;
 `;
 const ImageBoxAnchor = styled.a`

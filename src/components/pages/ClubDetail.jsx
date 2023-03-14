@@ -39,7 +39,7 @@ const Container = styled.div`
   top: 0;
   width: 100vw;
   overflow: hidden;
-  height: 100vh;
+  height: 1000px;
   background-color: #161616;
 `;
 const HomeButton = styled.button`
@@ -55,7 +55,7 @@ const HomeButton = styled.button`
 `;
 const Title = styled.p`
   // 동아리 이름
-  font-size: 5vw;
+  font-size: 4.5vw;
   font-weight: bold;
   letter-spacing: 1px;
   color: white;

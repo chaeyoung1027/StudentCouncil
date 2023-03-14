@@ -85,51 +85,40 @@ figure section { /*음악 플레이어 패널 프레임 그룹*/
 	width: 20vw;
 	height: 65vh;
 	position: absolute;
-	left: 50%;
+	left: 48%;
 	top: 140%;
 	margin-top: -25vh;
 	margin-left: -10vw;
 	transition: 1s; /* 11단계 */
 }
 
-@media screen and (max-width:1700px){
+@media screen and (max-height:864px){
 	figure section {
 		width: 20vw;
-		height: 78vh;
+		height: 65vh;
 		position: absolute;
-		left: 50%;
+		left: 48%;
 		top: 140%;
-		margin-top: 61vh;
+		margin-top: 536px;
 		margin-left: -10vw;
 		transition: 1s;
 	}
+	
 }
 
-@media screen and (max-width:1920px){
-	figure section {
-		width: 20vw;
-		height: 81vh;
-		position: absolute;
-		left: 50%;
-		top: 140%;
-		margin-top: 56vh;
-		margin-left: -12vw;
-		transition: 1s;
+@media screen and (max-height: 723px) {
+   figure section {
+    width: 20vw;
+    height: 83vh;
+    position: absolute;
+    left: 48%;
+    top: 140%;
+    margin-top: 700px;
+    margin-left: -10vw;
+    transition: 1s;
 	}
 }
 
-@media screen and (max-width:2048px){
-	figure section {
-		width: 20vw;
-		height: 82vh;
-		position: absolute;
-		left: 50%;
-		top: 140%;
-		margin-top: 96vh;
-		margin-left: -12vw;
-		transition: 1s;
-	}
-}
 
 figure section article { /*개별 음악 플레이어 패널*/
 	width: 100%;
