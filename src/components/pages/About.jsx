@@ -1,4 +1,5 @@
-import React, {useState} from 'react';
+import React from 'react';
+//styled-components는 css를 사용할 수 있게 해주는 라이브러리이다.
 import styled from 'styled-components';
 import about from '../../img/about.png';
 import './About.css';

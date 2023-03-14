@@ -1,7 +1,11 @@
+//useState는 랜더링이 되는 순간에 실행된다. 즉, 변경하고자 하는 값이 있고, set은 그 값을 변경하는 함수이다.
 import React, {useState} from 'react';
+//styled-components는 css를 사용할 수 있게 해주는 라이브러리이다.
 import styled from 'styled-components';
 import image from '../../img/mainpage.png';
 import imagecircle from '../../img/circle.png';
+//react-router-dom은 라우터를 사용할 수 있게 해주는 라이브러리이다.
+// 라우터는 주소창의 주소를 변경하고, 페이지를 새로고침하는 기능을 한다.
 import { useHistory } from "react-router-dom";
 
 function Home(props) {
