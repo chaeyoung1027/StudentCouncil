@@ -257,6 +257,14 @@ const Circle = styled.div`
         position: absolute;
         top: 39rem;
     }
+    @media screen and (max-height:660px){
+        width: 100vw;
+        height: 100vw;
+        background-color: rgb(255, 255, 255);
+        border-radius: 100rem;
+        position: absolute;
+        top: 36rem;
+    }
 `;
 
 // 이전 버튼

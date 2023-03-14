@@ -92,6 +92,19 @@ figure section { /*음악 플레이어 패널 프레임 그룹*/
 	transition: 1s; /* 11단계 */
 }
 
+@media screen and (max-height:1080px) {
+	figure section {
+		width: 20vw;
+		height: 65vh;
+		position: absolute;
+		left: 48%;
+		top: 140%;
+		margin-top: 536px;
+		margin-left: -10vw;
+		transition: 1s;
+	}
+}
+
 @media screen and (max-height:864px){
 	figure section {
 		width: 20vw;
@@ -117,6 +130,20 @@ figure section { /*음악 플레이어 패널 프레임 그룹*/
     margin-left: -10vw;
     transition: 1s;
 	}
+}
+
+@media screen and (max-height:660px){
+	figure section {
+		width: 20vw;
+		height: 85vh;
+		position: absolute;
+		left: 48%;
+		top: 140%;
+		margin-top: 789px;
+		margin-left: -10vw;
+		transition: 1s;
+	}
+	
 }
 
 
@@ -190,6 +217,7 @@ figure section article { /*개별 음악 플레이어 패널*/
     top: -1581PX;
     left: -592px;
     transform: rotate(-25deg);
+	filter: brightness(50%);
 }
 
 .third {
@@ -199,6 +227,7 @@ figure section article { /*개별 음악 플레이어 패널*/
     top: -1575PX;
     left: 587px;
     transform: rotate(25deg);
+	filter: brightness(50%);
 }
 
 figure section article .inner { /*음악 플레이어 패널 콘텐츠 그룹*/
