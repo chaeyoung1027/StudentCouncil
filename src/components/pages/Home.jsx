@@ -36,7 +36,7 @@ function Home(props) {
                     setWidth('90vw');
                     setHeight('90vw');
                     setMarginTop('-80vw');
-                    setColor('#161616');
+                    setColor('#000');
                     //setTimeout을 사용한 이유는 위의 코드가 실행되고 나서 1.25초 후에 handler2()가 실행되도록 하기 위해서이다.
                     setTimeout(() => {
                         handler2();
@@ -58,12 +58,25 @@ const Img = styled.img`
     width: 63vw;
     display: flex;
     justify-content: center;
-    margin-top: -3vw;`;
+    margin-top: -3vw;
+    
+    @media only screen and (max-width: 604px) {
+        margin-top: 60vw;
+        width: 80%;
+        height: 41%;
+    }`
+    ;
 const Img2 = styled.img`
     display: flex;
     justify-content: center;
     margin: 0 auto;
-    transition: all ease 2s 0s;`;
+    transition: all ease 2s 0s;
+    
+    @media only screen and (max-width: 604px) {
+        margin-top: -62vw !important;
+        
+    }
+    `;
 const Text = styled.div`
     font-size: 4.5vw;
     letter-spacing: 0.65rem;
@@ -74,5 +87,11 @@ const Text = styled.div`
     margin: 0 auto;
     margin-top: -25vw; 
     transition: all ease 2s 0s; 
-`;
+    
+    @media only screen and (max-width: 604px) {
+        margin-top: -80vw;
+        font-size: 9vw;
+        width: 100%;
+    }`
+;
 export default Home;

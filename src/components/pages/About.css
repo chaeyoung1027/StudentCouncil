@@ -25,6 +25,42 @@ section {
     height: 30vh;
 }
 
+@media only screen and (max-width: 1328px) {
+    .two {
+        -webkit-mask-image: none;
+        mask-image: none;
+        background-color: #000;
+        width: 2rem;
+        height: 3vh;
+        opacity: 0.1;
+    }
+    .value {
+        margin-left: 5rem!important;
+        margin-top: -36rem !important;
+    }
+    .talk {
+        padding: 1rem;
+        margin-left: 2rem !important;
+        margin-top: 12rem !important;
+        opacity: 0.8;
+        color: #333;
+    }
+    .chan {
+        padding: 1rem;
+        margin-left: 2rem !important;
+        margin-top: 25rem !important;
+        color: #333;
+        opacity: 0.8;
+    }
+    .Active {
+        margin-top: -8rem !important;
+        margin-bottom: 1rem !important;
+    }
+    .t {
+        margin-top: -6rem;
+    }
+}
+
 section::after {
     position: absolute;
     bottom: 0;
