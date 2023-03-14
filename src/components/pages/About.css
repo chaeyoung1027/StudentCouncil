@@ -36,19 +36,19 @@ section {
     }
     .value {
         margin-left: 5rem!important;
-        margin-top: -36rem !important;
+        margin-top: -42rem !important;
     }
     .talk {
         padding: 1rem;
-        margin-left: 2rem !important;
-        margin-top: 12rem !important;
+        margin-left: 1rem !important;
+        margin-top: 18rem !important;
         opacity: 0.8;
         color: #333;
     }
     .chan {
         padding: 1rem;
-        margin-left: 2rem !important;
-        margin-top: 25rem !important;
+        margin-left: 1rem !important;
+        margin-top: 31rem !important;
         color: #333;
         opacity: 0.8;
     }
