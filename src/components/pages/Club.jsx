@@ -69,9 +69,13 @@ const RightSideBar = styled.div`
 `;
 const HomeButton = styled.button`
   cursor: pointer;
-  background-color: #f3f3f3;
+  padding: 0.4rem 1rem;
+  background-color: #eaeaea;
+  color: black;
   border: none;
   float: left;
+  border-radius: 0.3rem;
+  margin: 1.5rem;
 `;
 const Title = styled.p`
   font-size: 64px;
