@@ -14,12 +14,13 @@ function HomeIntent(props) {
     const deg = 45; //각각의 article요소가 회전할 각도
     const len = lists.current.length - 1; //순번이 0부터 시작하므로 전체 개수에서 1을 빼줌
     let i = 0;
+    let numArray = [0,1,2,3,4,5,6,7,8];
     
     //article의 개수만큼 반복
-    for (i = 0; i < lists.current.length; i++) {
-        //각 article 요소를 45도씩 회전하고 아래로 배치
-        lists.current[i].style.transform = `rotate(${deg * i}deg) translateY(-100vh)`;
-    }
+    // for (i = 0; i < lists.current.length; i++) {
+    //     //각 article 요소를 45도씩 회전하고 아래로 배치
+    //     lists.current[i].style.transform = ``;
+    // }
 
     function activation(index, lists) {
         console.log(index);
@@ -32,7 +33,7 @@ function HomeIntent(props) {
     //prev 버튼 클릭 시
     const onIncrease = () => {
         setNum(num + 1);
-        setAngle(deg * num - 45);
+        setAngle();
         frame.current.style.transform = `rotate(${angle + 45}deg)`;
         active === 0 ? setActive(len) : setActive(active - 1);
         activation(active, lists.current);
@@ -41,7 +42,7 @@ function HomeIntent(props) {
     //next 버튼 클릭시
     const onDecrease = () => {
         setNum(num - 1);
-        setAngle(deg * num - 45);
+        setAngle(num * angle + 45);
         frame.current.style.transform = `rotate(${angle - 45}deg)`;
         active === len ? setActive(0) : setActive(active + 1);
         activation(active, lists.current);
@@ -52,108 +53,23 @@ function HomeIntent(props) {
             <Text>TEXTINPUT</Text>
             <figure>
                 <section ref={frame}>
-                    <article ref={(el)=>lists.current[0]=el}>
-                    <div className="inner">
-                        <div className="pic">
-                        <div className="dot"></div>
-                        </div>
-
-                        <div className="txt">
-                        <h2>Blizzards</h2>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-                        </div>
-                    </div>
-                    </article>
-
-                    <article ref={(el)=>lists.current[1]=el}>
-                    <div className="inner">
-                        <div className="pic">
-                        <div className="dot"></div>
-                        </div>
-
-                        <div className="txt">
-                        <h2>Calm</h2>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-                        </div>
-                    </div>
-                    </article>
-
-                    <article ref={(el)=>lists.current[2]=el}>
-                    <div className="inner">
-                        <div className="pic">
-                        <div className="dot"></div>
-                        </div>
-
-                        <div className="txt">
-                        <h2>Dusty Road</h2>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-                        </div>
-                    </div>
-                    </article>
-
-                    <article ref={(el)=>lists.current[3]=el}>
-                    <div className="inner">
-                        <div className="pic">
-                        <div className="dot"></div>
-                        </div>
-
-                        <div className="txt">
-                        <h2>Escape</h2>
-                        </div>
-                    </div>
-                    </article>
-
-                    <article ref={(el)=>lists.current[4]=el}>
-                    <div className="inner">
-                        <div className="pic">
-                        <div className="dot"></div>
-                        </div>
-
-                        <div className="txt">
-                        <h2>Payday</h2>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-                        </div>
-                    </div>
-                    </article>
-
-                    <article ref={(el)=>lists.current[5]=el}>
-                    <div className="inner">
-                        <div className="pic">
-                        <div className="dot"></div>
-                        </div>
-
-                        <div className="txt">
-                        <h2>Retreat</h2>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-                        </div>
-                    </div>
-                    </article>
-
-                    <article ref={(el)=>lists.current[6]=el}>
-                    <div className="inner">
-                        <div className="pic">
-                        <div className="dot"></div>
-                        </div>
-
-                        <div className="txt">
-                        <h2>Seasonal</h2>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-                        </div>
-                    </div>
-                    </article>
-
-                    <article ref={(el)=>lists.current[7]=el}>
-                    <div className="inner">
-                        <div className="pic">
-                        <div className="dot"></div>
-                        </div>
-
-                        <div className="txt">
-                        <h2>Vespers</h2>
-                        <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
-                        </div>
-                    </div>
-                    </article>
+                    {numArray.map(function(item, index){
+                            return(
+                                <>
+                                    <article ref={(el)=>lists.current[0]=el} style={{transform: `rotate(${deg * i}deg) translateY(-100vh)`}}>
+                                        <div className="inner">
+                                            <div className="pic">
+                                            <div className="dot"></div>
+                                        </div>
+                                            <div className="txt">
+                                                <h2>Blizzards</h2>
+                                                <p>Lorem ipsum dolor, sit amet consectetur adipisicing.</p>
+                                            </div>
+                                        </div>
+                                    </article>
+                                </>
+                            );
+                        })}
                 </section>
 
                 </figure>
@@ -276,7 +192,7 @@ const Prev = styled.div`
 	position: absolute;
 	top: 70%;
 	left: 55%;
-	transform: translate(-20vw, -50%);
+	transform: translate(-20vw, -50%);  
 	display: flex;
 	align-items: center;
 	text-align: left;
