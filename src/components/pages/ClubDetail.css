@@ -1,0 +1,21 @@
+.content {
+  padding: 10rem 0;
+}
+.carousel-container {
+  float: left;
+  width: 50%;
+  margin-top: 21rem;
+  margin-left: 4rem;
+}
+
+@media screen and (max-width: 1770px) {
+  .content {
+    padding: 5rem 0;
+  }
+  .carousel-container {
+    width: 80%;
+    margin: 0 auto;
+    float: none;
+  }
+}
+

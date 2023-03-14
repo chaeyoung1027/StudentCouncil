@@ -1,41 +1,37 @@
 import React, { useState, Component } from "react";
-import { Carousel } from "react-circular-carousel";
+// import { Carousel } from "react-circular-carousel";
 import styled from "styled-components";
 import { useHistory, useParams } from "react-router-dom";
+import AliceCarousel from "./Carousel";
+import "./ClubDetail.css";
 // import "react-circular-carousel/dist/index.css";
 
 function ClubDetail(props) {
   let { id } = useParams();
   const history = useHistory();
 
-  console.log(props.clubs[0]); //동아리 이름
+  console.log(props.clubs[3]); //동아리 이름
   function toHome() {
-    history.replace("/");
+    history.replace("/club");
     window.location.reload();
   }
-
   return (
     <Container>
-      <HomeButton
-        onClick={() => {
-          history.goBack();
-        }}
-      >
-        home
-      </HomeButton>
-      <div style={{ float: "left" }}>
-        <div style={{ padding: "10rem 0", marginRight: "5rem" }}>
-          <Title>{props.clubs[id]}</Title>
-          <Content>{props.clubsContent[id]}</Content>
+      <HomeButton onClick={toHome}>home</HomeButton>
+      <div style={{ float: "left", width: "40%" }}>
+        <div className="content">
+          <Title className="title">{props.clubs[id]}</Title>
+          <Content className="inner-content">{props.clubsContent[id]}</Content>
         </div>
       </div>
-      <Carousel height={500} width={300} spacing={10} gab={50} offset={50}>
-        <Img src={process.env.PUBLIC_URL + "/0/1.png"}></Img>
-        <Img src={process.env.PUBLIC_URL + "/0/1.png"}></Img>
-        <Img src={process.env.PUBLIC_URL + "/0/1.png"}></Img>
-        <Img src={process.env.PUBLIC_URL + "/0/1.png"}></Img>
-        <Img src={process.env.PUBLIC_URL + "/0/1.png"}></Img>
-      </Carousel>
+      {/* <Carousel height={500} width={300} spacing={10} gab={50} offset={50}>
+        {imagesArray.map((a, i) => (
+          <Img src={process.env.PUBLIC_URL + `/public_assets/${id}/${i}.jpg`} />
+        ))}
+      </Carousel> */}
+      <div className="carousel-container">
+        <AliceCarousel id={id} />
+      </div>
     </Container>
   );
 }
@@ -68,8 +64,7 @@ const Title = styled.p`
 `;
 const Content = styled.p`
   //동아리 설명
-  width: 40rem;
-  height: 20rem;
+  width: 40vw;
   font-size: 1.5vw;
   color: white;
   letter-spacing: 0.1rem;
@@ -77,8 +72,9 @@ const Content = styled.p`
   text-overflow: ellipsis;
 `;
 const Img = styled.img`
-  widht: 100%;
+  width: 100%;
   height: 100%;
   object-fit: cover;
 `;
+
 export default ClubDetail;
