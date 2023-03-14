@@ -34,7 +34,7 @@ function Club(props) {
     <Container className="body">
       <HomeButton onClick={handler2}>home</HomeButton>
       <div style={{ float: "left" }}>
-        <div style={{ padding: "16rem 0", marginRight: "5rem" }}>
+        <Writing>
           <Title>MIRIM SOCIETY</Title>
           <Content>
             미림마이스터고만의 자유로운 전공 동아리입니다. 총{" "}
@@ -43,7 +43,7 @@ function Club(props) {
             <br />
             선후배, 각 학과 간의친목을 도모할 수 있는 자리입니다.
           </Content>
-        </div>
+        </Writing>
       </div>
       <RightSideBar className="rightBar">
         {/* 모달. map사용. 배열에 사진링크 넣고 삽입. */}
@@ -60,12 +60,21 @@ const Container = styled.div`
   top: 0;
   background-color: #f3f3f3;
   /* padding: 4rem; */
+  @media screen and (max-width: 1700px){
+    height: 400vh;
+    overflow: hidden;
+  }
 `;
 const RightSideBar = styled.div`
   float: left;
-  width: 47.2%;
   height: 100%;
   overflow: scroll;
+  @media screen and (max-width: 1700px){
+    margin-left: 13vw;
+  }
+  @media screen and (max-width: 950px){
+    margin-left: 0;
+  }
 `;
 const HomeButton = styled.button`
   cursor: pointer;
@@ -76,6 +85,14 @@ const HomeButton = styled.button`
   float: left;
   border-radius: 0.3rem;
   margin: 1.5rem;
+`;
+const Writing = styled.div`
+  padding: 16rem 0;
+  margin-right: 5rem;
+  @media screen and (max-width: 950px){
+    padding: 16rem 5rem;
+    margin: 0;
+  }
 `;
 const Title = styled.p`
   font-size: 64px;
@@ -103,6 +120,10 @@ const ImageBox = styled.div`
   &:focus {
     transform: scale(1.2);
   }
+  @media screen and (max-width: 950px){
+    width: 50vw;
+    height: 45vw;
+  }
 `;
 const ContentBox = styled.div`
   width: 360px;
@@ -112,6 +133,10 @@ const ContentBox = styled.div`
   justify-content: center;
   align-items: center;
   border: 0.5px black solid;
+  @media screen and (max-width: 950px){
+    width: 50vw;
+    height: 45vw;
+  }
 `;
 function Modal(props) {
   const history = useHistory();
