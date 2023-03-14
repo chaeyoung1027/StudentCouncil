@@ -3,8 +3,15 @@ import React from 'react';
 import styled from 'styled-components';
 import about from '../../img/about.png';
 import './About.css';
+import { useHistory } from "react-router-dom";
 
 function About(props) {
+  const history = useHistory();
+
+  function toHome() {
+    history.replace("/homeintent");
+    window.location.reload();
+  }
     return (
       <div id='container'>
         <section id="section01" class="demo" style={{backgroundImage: `url(${about})`, objectFit: 'none' }}>
@@ -13,6 +20,7 @@ function About(props) {
               <div style={{color : 'white', fontWeight: 'bold', fontSize: '2.5rem',letterSpacing: '1rem'}}>ABOUT</div>
               <div style={{color : 'white', fontWeight: 'lighter', fontSize: '1.4rem'}}>32기 학생회</div>
             </Box> 
+            <HomeButton onClick={toHome}>home</HomeButton>
             <a href="#section02" style={{position: 'absolute'}}><span></span>Scroll</a>
         </section>
         <section id="section02" class="demo" style={{backgroundImage: `url(${about})`, objectFit: 'none' }}>
@@ -107,7 +115,6 @@ const Box = styled.div`
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  
 `;
 
 const Box2 = styled.div`
@@ -123,5 +130,17 @@ const Box2 = styled.div`
     width: 20rem !important;
     height: 10rem !important;
     }
+`;
+const HomeButton = styled.button`
+  position: absolute;
+  top: 0;
+  padding: 0.4rem 1rem;
+  background-color: #fff;
+  opacity: 1;
+  color: black;
+  border: none;
+  float: left;
+  border-radius: 0.3rem;
+  margin: 1.5rem;
 `;
 export default About;

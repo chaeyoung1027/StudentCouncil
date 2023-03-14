@@ -59,9 +59,13 @@ function HomeIntent(props) {
         window.location.reload();
     } 
 
+    function about(){
+        history.replace("/about");
+        window.location.reload();
+    }
     return (
         <Container>
-            <Text>MIRIM 학생회</Text>
+            <Text onClick={about}>MIRIM 학생회</Text>
             <figure>
                 <section ref={frame}>
                     {numArray.map(function(item, index){
@@ -208,6 +212,7 @@ const Text = styled.div`
     letter-spacing: 2rem;
     font-weight: bold;
     font-family: 'Noto Sans KR', sans-serif; 
+    cursor: pointer;
 `;
 
 // [12 file figure tag]
