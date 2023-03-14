@@ -14,14 +14,13 @@ function HomeIntent(props) {
     const deg = 45; //각각의 article요소가 회전할 각도
     const len = lists.current.length - 1; //순번이 0부터 시작하므로 전체 개수에서 1을 빼줌
     let i = 0;
-    let numArray = [0,1,2,3,4,5,6,7,8];
+    let numArray = [1,2,3,4,5,6,7,8];
     
     //article의 개수만큼 반복
     // for (i = 0; i < lists.current.length; i++) {
     //     //각 article 요소를 45도씩 회전하고 아래로 배치
     //     lists.current[i].style.transform = ``;
     // }
-
     function activation(index, lists) {
         console.log(index);
         console.log(lists[i]);
@@ -29,11 +28,10 @@ function HomeIntent(props) {
             lists[i].className = (i === index) ? "on" : "";
         }
     }
-    
     //prev 버튼 클릭 시
     const onIncrease = () => {
         setNum(num + 1);
-        setAngle();
+        setAngle(deg * num);
         frame.current.style.transform = `rotate(${angle + 45}deg)`;
         active === 0 ? setActive(len) : setActive(active - 1);
         activation(active, lists.current);
@@ -42,7 +40,7 @@ function HomeIntent(props) {
     //next 버튼 클릭시
     const onDecrease = () => {
         setNum(num - 1);
-        setAngle(num * angle + 45);
+        setAngle(deg * num);
         frame.current.style.transform = `rotate(${angle - 45}deg)`;
         active === len ? setActive(0) : setActive(active + 1);
         activation(active, lists.current);
@@ -56,7 +54,7 @@ function HomeIntent(props) {
                     {numArray.map(function(item, index){
                             return(
                                 <>
-                                    <article ref={(el)=>lists.current[0]=el} style={{transform: `rotate(${deg * i}deg) translateY(-100vh)`}}>
+                                    <article ref={(el)=>lists.current[index]=el} style={{transform: `rotate(${deg * item}deg) translateY(-100vh)`}} className={ item === 8 ? 'on' : ''}>
                                         <div className="inner">
                                             <div className="pic">
                                             <div className="dot"></div>
@@ -73,8 +71,8 @@ function HomeIntent(props) {
                 </section>
 
                 </figure>
-                <Prev className='btnPrev' onClick={onIncrease}><span className='prev'>이전</span></Prev>
-                <Next className='btnNext' onClick={onDecrease}><span className='next'>다음</span></Next>
+                {/* <Prev className='btnPrev' onClick={onIncrease}><span className='prev'>이전</span></Prev>
+                <Next className='btnNext' onClick={onDecrease}><span className='next'>다음</span></Next> */}
         </Container>
         
     )
