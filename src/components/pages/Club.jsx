@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
+import "./Club.css";
 import image0 from "../../img/group/0.jpg";
 import image1 from "../../img/group/1.jpg";
 import image2 from "../../img/group/2.jpg";
@@ -31,10 +32,10 @@ function Club(props) {
     window.location.reload();
   }
   return (
-    <Container className="body">
+    <div className="container">
       <HomeButton onClick={handler2}>home</HomeButton>
       <div style={{ float: "left" }}>
-        <div style={{ padding: "16rem 0", marginRight: "5rem" }}>
+        <div className="content-outer">
           <Title>MIRIM SOCIETY</Title>
           <Content>
             미림마이스터고만의 자유로운 전공 동아리입니다. 총{" "}
@@ -49,21 +50,11 @@ function Club(props) {
         {/* 모달. map사용. 배열에 사진링크 넣고 삽입. */}
         <Modal clubs={props.clubs} images={images} />
       </RightSideBar>
-    </Container>
+      </div>
   );
 }
-const Container = styled.div`
-  /* height: 50.5rem; */
-  width: 100vw;
-  height: 100vh;
-  // overflow: hidden;
-  top: 0;
-  background-color: #f3f3f3;
-  /* padding: 4rem; */
-`;
 const RightSideBar = styled.div`
   float: left;
-  width: 47.2%;
   height: 100%;
   overflow: scroll;
 `;

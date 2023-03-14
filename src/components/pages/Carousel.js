@@ -5,8 +5,11 @@ import AliceCarousel from "react-alice-carousel";
 const Carousel = (props) => {
   const responsive = {
     0: {
-      items: 2,
+      items: 1,
     },
+    768: {
+      items: 2,
+    }
   };
 
   const handleDragStart = (e) => e.preventDefault();
@@ -39,7 +42,7 @@ const Carousel = (props) => {
       <AliceCarousel
         mouseTracking
         infinite={1000}
-        animationDuration={3000}
+        animationDuration={2500}
         disableDotsControls
         disableButtonsControls
         responsive={responsive}
@@ -61,12 +64,11 @@ const Contain = styled.div`
 const ItemsContain = styled.div`
   width: 100%;
   height: 100%;
-  padding: 0 10px;
 `;
 
 const ItemsWrap = styled.div`
   width: 100%;
-  height: 20rem;
+  height: 25rem;
   border-radius: 20px;
   overflow: hidden;
   margin: 0 1rem;
@@ -75,5 +77,6 @@ const ItemsWrap = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+    margin: 15px;
   }
 `;
