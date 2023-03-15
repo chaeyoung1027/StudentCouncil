@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import Home from "./components/pages/Home";
 import HomeIntent from "./components/pages/HomeIntent";
 import Club from "./components/pages/Club";
@@ -44,7 +45,7 @@ function App() {
         "https://www.instagram.com/2023.miven/",
   ]
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <HashRouter basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/homeintent" component={HomeIntent} />
@@ -59,7 +60,7 @@ function App() {
         <Route path="/about" component={About} />
         <Route path="*" element={<h1>404 페이지</h1>} />
       </Switch>
-    </Router>
+    </HashRouter>
   );
 }
 
