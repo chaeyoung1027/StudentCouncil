@@ -44,7 +44,7 @@ function App() {
         "https://www.instagram.com/2023.miven/",
   ]
   return (
-    <Router>
+    <Router basename={process.env.PUBLIC_URL}>
       <Switch>
         <Route path="/" exact component={Home} />
         <Route path="/homeintent" component={HomeIntent} />
