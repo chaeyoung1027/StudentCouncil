@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/StudentCouncil/static/css/main.69d98804.css",
-    "main.js": "/StudentCouncil/static/js/main.0ca07831.js",
+    "main.js": "/StudentCouncil/static/js/main.600c0da4.js",
     "static/js/787.cefa1526.chunk.js": "/StudentCouncil/static/js/787.cefa1526.chunk.js",
     "static/media/about.png": "/StudentCouncil/static/media/about.ccea2811e50422e6bd1f.png",
     "static/media/7.jpg": "/StudentCouncil/static/media/7.0ce7a9fd2ed25d8ccabc.jpg",
@@ -18,11 +18,11 @@
     "static/media/circle.png": "/StudentCouncil/static/media/circle.4b50bf69f2e1bb0229d7.png",
     "index.html": "/StudentCouncil/index.html",
     "main.69d98804.css.map": "/StudentCouncil/static/css/main.69d98804.css.map",
-    "main.0ca07831.js.map": "/StudentCouncil/static/js/main.0ca07831.js.map",
+    "main.600c0da4.js.map": "/StudentCouncil/static/js/main.600c0da4.js.map",
     "787.cefa1526.chunk.js.map": "/StudentCouncil/static/js/787.cefa1526.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.69d98804.css",
-    "static/js/main.0ca07831.js"
+    "static/js/main.600c0da4.js"
   ]
 }
