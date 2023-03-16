@@ -55,13 +55,12 @@ function Club(props) {
 const Container = styled.div`
   /* height: 50.5rem; */
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   // overflow: hidden;
   top: 0;
   background-color: #f3f3f3;
   /* padding: 4rem; */
   @media screen and (max-width: 1776px){
-    height: 400vh;
     overflow: hidden;
   }
 `;
