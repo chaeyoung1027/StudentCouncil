@@ -21,7 +21,7 @@ function About(props) {
               <div style={{color : 'white', fontWeight: 'lighter', fontSize: '1.4rem'}}>32기 학생회</div>
             </Box> 
             <HomeButton onClick={toHome}>home</HomeButton>
-            <a href="#section02" style={{position: 'absolute'}}><span></span>Scroll</a>
+            {/* <a href="#section02" style={{position: 'absolute'}}><span></span>Scroll</a> */}
         </section>
         <section id="section02" class="demo" style={{backgroundImage: `url(${about})`, objectFit: 'none' }}>
             <Container style={{backgroundColor: 'black', opacity: '0.7', height: '100vh',width: '30vw', margin: '0 auto'}}></Container>
@@ -40,7 +40,7 @@ function About(props) {
                 앞으로 학생회는 '미림 학생 주도 잡지 웹 사이트'를 통해 앞으로 더 많은 미림인들의 이야기를 들으며, 더 편안한 미림을 만들기 위해 노력하겠습니다. 
               </div>
             </Box> 
-            <a href="#section03"><span></span>Scroll</a>
+            {/* <a href="#section03"><span></span>Scroll</a> */}
         </section>
         <section id="section03" class="demo" style={{backgroundImage: `url(${about})`, objectFit: 'none' }}>
             <Container style={{backgroundColor: 'black', opacity: '2', height: '100vh',width: '70vw', marginLeft: '37rem'}} className = "two">
@@ -55,7 +55,7 @@ function About(props) {
               <div style={{color : 'white', fontWeight: 'bold', fontSize: '1.6rem',letterSpacing: '1rem', textAlign: 'left',marginBottom: '1rem'}}>청춘</div>
               <div style={{color : 'white', fontWeight: 'lighter', fontSize: '0.9rem', width: '20rem'}}>학생회는 한 번뿐인 학창 시절, 즐거운 추억이 많았으면 하는 바람을 동기 삼았습니다. 이에 많은 학생이 참여할 수 있는 즐거운 이벤트들을 기획하고 실천하였습니다.</div>
             </Box2> 
-            <a href="#section04"><span></span>Scroll</a>
+            {/* <a href="#section04"><span></span>Scroll</a> */}
         </section>
         <section id="section04" class="demo" style={{backgroundImage: `url(${about})`, objectFit: 'none' }}>
             <Container></Container>
@@ -70,7 +70,7 @@ function About(props) {
                   <br/>동아리 발표회
               </div>
             </Box>
-            <a href="#section05"><span></span>Scroll</a>
+            {/* <a href="#section05"><span></span>Scroll</a> */}
         </section>
         <section id="section05" class="demo" style={{backgroundImage: `url(${about})`, objectFit: 'none' }}>
             <Container style={{backgroundColor: 'black', opacity: '0.7', height: '100vh',width: '30vw', margin: '0 auto'}}></Container>
@@ -88,7 +88,7 @@ function About(props) {
                 <h3>A very special thanks to you</h3>
               </div>
             </Box> 
-            <a href="#section01"><span></span>Scroll</a>
+            {/* <a href="#section01"><span></span>Scroll</a> */}
         </section>
         </div>
     )
