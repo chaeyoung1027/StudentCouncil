@@ -1,23 +1,19 @@
 import React, { useState } from "react";
-import { Carousel } from 'react-circular-carousel'
+import { Carousel } from "react-circular-carousel";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
-import image from '../../img/first.png';
-import image2 from '../../img/about.png';
+import image from "../img/first.png";
+import image2 from "../img/about.png";
 
 function SchoolEvent(props) {
+  const history = useHistory();
 
-    const history = useHistory();
+  let images = [image, image2];
 
-    let images = [
-      image,
-      image2,
-    ];
-
-    function handler2() {
-        history.replace("/");
-        window.location.reload();
-    }
+  function handler2() {
+    history.replace("/");
+    window.location.reload();
+  }
 
   return (
     <LeftContainer>
@@ -28,7 +24,7 @@ function SchoolEvent(props) {
         {/* 모달. map사용. 배열에 사진링크 넣고 삽입. */}
         <Modal images={images} />
       </RightSideBar>
-     </LeftContainer>
+    </LeftContainer>
   );
 }
 
@@ -86,27 +82,27 @@ const BorderCircle = styled.div`
   border-radius: 50rem;
 `;
 const Img = styled.img`
-    widht: 100%;
-    height: 100%;
-    object-fit: cover;
-    text-align: center;
+  widht: 100%;
+  height: 100%;
+  object-fit: cover;
+  text-align: center;
 `;
 const TitleText = styled.div`
-    color: #000000;
-    font-size: 3.2vw;
-    text-align: left;
-    margin-top: 10vw;
-    margin-left: 5vw;
-    font-weight: bold;
-    font-family: 'Noto Sans KR', sans-serif; 
+  color: #000000;
+  font-size: 3.2vw;
+  text-align: left;
+  margin-top: 10vw;
+  margin-left: 5vw;
+  font-weight: bold;
+  font-family: "Noto Sans KR", sans-serif;
 `;
 const ContextText = styled.div`
-    color: #000000;
-    font-size: 1wv;
-    text-align: left;
-    margin-top: 3vw;
-    margin-left: 5vw;
-    font-family: 'Noto Sans KR', sans-serif;
+  color: #000000;
+  font-size: 1wv;
+  text-align: left;
+  margin-top: 3vw;
+  margin-left: 5vw;
+  font-family: "Noto Sans KR", sans-serif;
 `;
 
 function Modal(props) {
@@ -120,7 +116,7 @@ function Modal(props) {
         <Img src={image}></Img>
       </Carousel>
     </RightContainer>
-  )
+  );
 }
 
 export default SchoolEvent;

@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { HashRouter } from "react-router-dom";
-import Home from "./components/pages/Home";
-import HomeIntent from "./components/pages/HomeIntent";
-import Club from "./components/pages/Club";
-import ClubDetail from "./components/pages/ClubDetail";
-import SchEvent from "./components/pages/SchoolEvent";
-import About from "./components/pages/About";
+import Home from "./pages/Home";
+import HomeIntent from "./pages/HomeIntent";
+import Club from "./pages/Club";
+import ClubDetail from "./pages/ClubDetail";
+import SchEvent from "./pages/SchoolEvent";
+import About from "./pages/About";
 
 function App() {
   let clubs = [
@@ -34,16 +34,16 @@ function App() {
   ];
 
   let clubsLink = [
-        "https://www.facebook.com/profile.php?id=100080336959216&mibextid=LQQJ4d",
-        "https://instagram.com/js_mirim?igshid=YmMyMTA2M2Y=",
-        "https://instagram.com/d.da__?igshid=YmMyMTA2M2Y=",
-        "https://instagram.com/cpu_mirim?igshid=YmMyMTA2M2Y=",
-        "https://www.instagram.com/app_and_me/?igshid=YmMyMTA2M2Y%3D",
-        "https://instagram.com/mirim_woochindong?igshid=YmMyMTA2M2Y=",
-        "https://www.instagram.com/gamemakerrrr/",
-        "https://instagram.com/crea.tive20_?igshid=YmMyMTA2M2Y=",
-        "https://www.instagram.com/2023.miven/",
-  ]
+    "https://www.facebook.com/profile.php?id=100080336959216&mibextid=LQQJ4d",
+    "https://instagram.com/js_mirim?igshid=YmMyMTA2M2Y=",
+    "https://instagram.com/d.da__?igshid=YmMyMTA2M2Y=",
+    "https://instagram.com/cpu_mirim?igshid=YmMyMTA2M2Y=",
+    "https://www.instagram.com/app_and_me/?igshid=YmMyMTA2M2Y%3D",
+    "https://instagram.com/mirim_woochindong?igshid=YmMyMTA2M2Y=",
+    "https://www.instagram.com/gamemakerrrr/",
+    "https://instagram.com/crea.tive20_?igshid=YmMyMTA2M2Y=",
+    "https://www.instagram.com/2023.miven/",
+  ];
   return (
     <HashRouter basename={process.env.PUBLIC_URL}>
       <Switch>
@@ -52,7 +52,11 @@ function App() {
         <Route
           path="/club/detail/:id"
           render={() => (
-            <ClubDetail clubs={clubs} clubsContent={clubsContent} clubsLink={clubsLink} />
+            <ClubDetail
+              clubs={clubs}
+              clubsContent={clubsContent}
+              clubsLink={clubsLink}
+            />
           )}
         />
         <Route path="/club" render={() => <Club clubs={clubs} />} />
