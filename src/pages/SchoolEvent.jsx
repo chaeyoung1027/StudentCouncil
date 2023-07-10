@@ -8,7 +8,7 @@ import image3 from "../img/schoolevent_group/3.jpg";
 import image4 from "../img/schoolevent_group/4.png";
 import image5 from "../img/schoolevent_group/5.jpeg";
 import image6 from "../img/schoolevent_group/6.jpeg";
-import image7 from "../img/schoolevent_group/7.jpg";
+import image7 from "../img/schoolevent_group/7.JPG";
 
 function SchoolEvent(props) {
   const history = useHistory();
