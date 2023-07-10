@@ -1,0 +1,25 @@
+.homeButton{
+    margin-left: 40px;
+    margin-top: 40px;
+}
+.explain{
+    margin-left: 100px;
+    margin-top: 200px;
+    position: relative;
+    z-index: 1;
+}
+.expTitle{
+    font-size:60px;
+    font-weight: 900;
+}
+.exp{
+    font-size: 26px;
+    margin-top: 132px;
+}
+.dial {
+    position: absolute;
+    top: 50%;
+    right: 40px;
+    transform: translateY(-50%);
+    z-index: 0;
+  }
