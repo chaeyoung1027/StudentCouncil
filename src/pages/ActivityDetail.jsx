@@ -3,7 +3,7 @@ import React from "react";
 import { Link, useHistory } from "react-router-dom";
 import homeButtonImg from "../img/homeButton.png";
 import Dial from "../img/Dial.png";
-import "./Activity.css";
+import "./ActivityDetail.css";
 
 
 function Activity() {
