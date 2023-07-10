@@ -7,6 +7,7 @@ import Club from "./pages/Club";
 import ClubDetail from "./pages/ClubDetail";
 import SchEvent from "./pages/SchoolEvent";
 import About from "./pages/About";
+import Activity from './pages/Activity'
 
 function App() {
   let clubs = [
@@ -59,6 +60,7 @@ function App() {
             />
           )}
         />
+        <Route path="/Activity" component={Activity}/>
         <Route path="/club" render={() => <Club clubs={clubs} />} />
         <Route path="/schoolevent" component={SchEvent} />
         <Route path="/about" component={About} />
