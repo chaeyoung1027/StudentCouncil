@@ -136,7 +136,19 @@ const ContentBox = styled.div`
     width: 50vw;
     height: 45vw;
   }
+
 `;
+const ClubName = styled.div`
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover{
+    -webkit-transform: scale(1.5,1.5);
+    -moz-transform: scale(1.5,1.5);
+    -o-transform: scale(1.5,1.5);
+    -ms-transform: scale(1.5,1.5);
+    transform: scale(1.5,1.5);
+  }
+`
 function Modal(props) {
   const history = useHistory();
 
@@ -161,13 +173,13 @@ function Modal(props) {
                   />
                 </ImageBoxAnchor>
                 <ContentBox onClick={() => toDetailPage(i)}>
-                  {props.clubs[i]}
+                  <ClubName>{props.clubs[i]}</ClubName>
                 </ContentBox>
               </div>
             ) : (
               <div style={{ display: "flex" }}>
                 <ContentBox onClick={() => toDetailPage(i)}>
-                  {props.clubs[i]}
+                <ClubName>{props.clubs[i]}</ClubName>
                 </ContentBox>
                 <ImageBoxAnchor>
                   <ImageBox
