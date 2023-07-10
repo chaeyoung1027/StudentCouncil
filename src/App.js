@@ -60,7 +60,7 @@ function App() {
             />
           )}
         />
-        <Route path="/Activity" component={ActivityDetail}/>
+        <Route path="/ActivityDetail" component={ActivityDetail}/>
         <Route path="/club" render={() => <Club clubs={clubs} />} />
         <Route path="/schoolevent" component={SchEvent} />
         <Route path="/about" component={About} />
