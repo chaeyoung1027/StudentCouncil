@@ -4,8 +4,7 @@ import styled from 'styled-components';
 import {useState, useRef} from 'react';
 // import { useHistory } from "react-router-dom";
 // import Card from "../home-ui/Card";
-import { Link } from 'react-router-dom' //****
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 function HomeIntent(props) {
     const [angle, setAngle] = useState(45);
@@ -17,6 +16,7 @@ function HomeIntent(props) {
     const len = lists.current.length - 1; //순번이 0부터 시작하므로 전체 개수에서 1을 빼줌
     let i = 0;
     let numArray = [2,3,4,5,6];
+    const navigate = useNavigate();
     
     //article의 개수만큼 반복
     // for (i = 0; i < lists.current.length; i++) {
@@ -50,29 +50,27 @@ function HomeIntent(props) {
 
     //useHistory는 라우터를 사용할 때 사용하는 훅이다.
     //즉, history.replace를 사용하면 주소창의 주소가 변경되고, window.location.reload()를 사용하면 페이지가 새로고침된다.
-    const history = useHistory();
 
-    function go() {
-        //아래 코드의 history.replace("/club");은 주소창의 주소를 /club으로 변경한다.
-        history.replace("/club");
-        //window.location.reload()는 페이지를 새로고침한다.
-        window.location.reload();
-    } 
+    // function go() {
+    //     //아래 코드의 history.replace("/club");은 주소창의 주소를 /club으로 변경한다.
+    //     history.replace("/club");
+    //     //window.location.reload()는 페이지를 새로고침한다.
+    //     window.location.reload();
+    // } 
 
-    function about(){
-        history.replace("/about");
-        window.location.reload();
-    }
+    // function about(){
+    //     history.replace("/about");
+    //     window.location.reload();
+    // }
     return (
         <Container>
-            <Text onClick={about}>MIRIM 학생회</Text>
+            <Text onClick={()=>{}}>MIRIM 학생회</Text>
             <figure>
                 <section ref={frame}>
                     {numArray.map(function(item, index){
                             return(
                                 <>
-                                <Link to="./club">
-                                    <article onClick={go} className="first">
+                                    <article onClick={()=>{navigate('/club')}} className="first">
                                         <div className="inner">
                                             <div className="pic">
                                             {/* <div className="dot"></div> */}
@@ -98,7 +96,6 @@ function HomeIntent(props) {
                                             </p>
                                         </div>
                                     </article>
-                                    </Link>
                                     <article className="second">
                                         <div className="inner">
                                             <div className="pic">

@@ -1,6 +1,6 @@
 //학생회 행사 정리 페이지
 import React from "react";
-import { Link, useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import homeButtonImg from "../img/homeButton.png";
 import Dial from "../img/Dial.png";
 import "./ActivityDetail.css";
@@ -8,11 +8,10 @@ import "./ActivityDetail.css";
 
 function Activity() {
   //홈으로
-  const history = useHistory();
-  function toHome() {
-  history.replace("/homeintent");
-  window.location.reload();
-  }
+  // function toHome() {
+  // history.replace("/homeintent");
+  // window.location.reload();
+  // }
 
   return (
     <div
@@ -22,7 +21,7 @@ function Activity() {
         background: "#F3F3F3",
       }}
     >
-      <img src={homeButtonImg} alt="홈버튼" className="homeButton" onClick={toHome} />
+      <img src={homeButtonImg} alt="홈버튼" className="homeButton" onClick={()=>{}} />
       <div className="explain">
         <div className="expTitle">동아리 발표회</div>
         <div className="exp">

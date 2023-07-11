@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { HashRouter } from "react-router-dom";
+import {  BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import HomeIntent from "./pages/HomeIntent";
 import Club from "./pages/Club";
@@ -45,28 +44,31 @@ function App() {
     "https://instagram.com/crea.tive20_?igshid=YmMyMTA2M2Y=",
     "https://www.instagram.com/2023.miven/",
   ];
+
   return (
-    <HashRouter basename={process.env.PUBLIC_URL}>
-      <Switch>
-        <Route path="/" exact component={Home} />
-        <Route path="/homeintent" component={HomeIntent} />
-        <Route
-          path="/club/detail/:id"
-          render={() => (
-            <ClubDetail
-              clubs={clubs}
-              clubsContent={clubsContent}
-              clubsLink={clubsLink}
-            />
-          )}
-        />
-        <Route path="/ActivityDetail" component={ActivityDetail}/>
-        <Route path="/club" render={() => <Club clubs={clubs} />} />
-        <Route path="/schoolevent" component={SchEvent} />
-        <Route path="/about" component={About} />
-        <Route path="*" element={<h1>404 페이지</h1>} />
-      </Switch>
-    </HashRouter>
+    // <HashRouter basename={process.env.PUBLIC_URL}>
+      <Router>
+        <Routes>
+          <Route path="/" exact element={<Home />} />
+          <Route path="/homeintent" element={<HomeIntent />} />
+          <Route
+            path="/club/detail/:id"
+            element={
+              <ClubDetail
+                clubs={clubs}
+                clubsContent={clubsContent}
+                clubsLink={clubsLink}
+              />
+            }
+          />
+          <Route path="/ActivityDetail" element={<ActivityDetail />}/>
+          <Route path="/club" element={<Club clubs={clubs} />} />
+          <Route path="/schoolevent" element={<SchEvent />} />
+          <Route path="/about" element={<About />} />
+          <Route path="*" element={<h1>404 페이지</h1>} />
+        </Routes>
+      </Router>
+    // </HashRouter>
   );
 }
 

@@ -1,23 +1,20 @@
 import React, { useState, Component } from "react";
 // import { Carousel } from "react-circular-carousel";
 import styled from "styled-components";
-import { useHistory, useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import AliceCarousel from "./Carousel";
 import "./ClubDetail.css";
 // import "react-circular-carousel/dist/index.css";
 
 function ClubDetail(props) {
   let { id } = useParams();
-  const history = useHistory();
+  const navigate = useNavigate();
 
   console.log(props.clubs[3]); //동아리 이름
-  function toHome() {
-    history.replace("/club");
-    window.location.reload();
-  }
+
   return (
     <Container>
-      <HomeButton onClick={toHome}>home</HomeButton>
+      <HomeButton onClick={()=>{navigate('/club')}}>home</HomeButton>
       <div style={{ float: "left", width: "40%" }}>
         <div className="content">
           <Title className="title">{props.clubs[id]}</Title>

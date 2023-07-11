@@ -3,15 +3,14 @@ import React from "react";
 import styled from "styled-components";
 import about from "../img/about.png";
 import "./About.css";
-import { useHistory } from "react-router-dom";
 
 function About(props) {
-  const history = useHistory();
+  // const history = useHistory();
 
-  function toHome() {
-    history.replace("/homeintent");
-    window.location.reload();
-  }
+  // function toHome() {
+  //   history.replace("/homeintent");
+  //   window.location.reload();
+  // }
   return (
     <div id="container">
       <section
@@ -55,7 +54,7 @@ function About(props) {
             32기 학생회
           </div>
         </Box>
-        <HomeButton onClick={toHome}>home</HomeButton>
+        <HomeButton onClick={()=>{}}>home</HomeButton>
         {/* <a href="#section02" style={{position: 'absolute'}}><span></span>Scroll</a> */}
       </section>
       <section
