@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import styled from "styled-components";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import image0 from "../img/group/0.jpg";
 import image1 from "../img/group/1.jpg";
 import image2 from "../img/group/2.jpg";
@@ -12,8 +12,7 @@ import image7 from "../img/group/7.jpg";
 import image8 from "../img/group/8.jpg";
 
 function Club(props) {
-  const history = useHistory();
-
+  const navigate = useNavigate();
   let images = [
     image0,
     image1,
@@ -26,13 +25,9 @@ function Club(props) {
     image8,
   ];
 
-  function handler2() {
-    history.replace("./homeintent");
-    window.location.reload();
-  }
   return (
-    <Container className="body">
-      <HomeButton onClick={handler2}>home</HomeButton>
+    <Container>
+      <HomeButton onClick={()=> navigate('/homeintent')}>home</HomeButton>
       <div style={{ float: "left" }}>
         <Writing>
           <Title>MIRIM SOCIETY</Title>
@@ -52,24 +47,71 @@ function Club(props) {
     </Container>
   );
 }
+
+function Modal(props) {
+  const navigate = useNavigate();
+
+  return (
+    <>
+      {props.clubs.map(function (a, i) {
+        return (
+          <>
+            {i % 2 === 1 ? (
+              <div style={{ display: "flex" }}>
+                <ImageBoxAnchor>
+                  <ImageBox
+                    imgUrl={props.images[i]}
+                    className="ImageBox"
+                    onClick={() => navigate(`detail/${i}`)}
+                  />
+                </ImageBoxAnchor>
+                <ContentBox onClick={() => navigate(`detail/${i}`)}>
+                  <ClubName>{props.clubs[i]}</ClubName>
+                </ContentBox>
+              </div>
+            ) : (
+              <div style={{ display: "flex" }}>
+                <ContentBox onClick={() => navigate(`detail/${i}`)}>
+                <ClubName>{props.clubs[i]}</ClubName>
+                </ContentBox>
+                <ImageBoxAnchor>
+                  <ImageBox
+                    imgUrl={props.images[i]}
+                    className="ImageBox"
+                    onClick={() => navigate(`detail/${i}`)}
+                  />
+                </ImageBoxAnchor>
+              </div>
+            )}
+          </>
+        );
+      })}
+    </>
+  );
+}
+
 const Container = styled.div`
-  /* height: 50.5rem; */
   width: 100vw;
-  height: 100%;
-  // overflow: hidden;
-  top: 0;
+  height: 200vh;
+
   background-color: #f3f3f3;
-  /* padding: 4rem; */
+  position: fixed;
   @media screen and (max-width: 1776px) {
-    overflow: hidden;
+    position: unset;
+    height: 400vh;
+  }
+  @media screen and (max-width: 950px) {
+    height: 0;
   }
 `;
 const RightSideBar = styled.div`
   float: left;
-  height: 100%;
+  height: 100vh;
   overflow: scroll;
   @media screen and (max-width: 1776px) {
+    height: 0;
     margin-left: 5vw;
+    overflow: unset;
   }
   @media screen and (max-width: 950px) {
     margin-left: 0;
@@ -110,14 +152,11 @@ const ImageBoxAnchor = styled.a`
 const ImageBox = styled.div`
   width: 360px;
   height: 300px;
-  background-color: black;
   border: 0.5px black solid;
-  background-size: cover; //이미지 꽉차게
-  background-position: center; //이미지 가운데 정렬
-  transition: 0.3s;
-  &:hover,
-  &:focus {
-    transform: scale(1.2);
+  background: black;
+  transition: 0.8s;
+  &:hover{
+    background: ${(props) =>`url(${props.imgUrl})`} center/cover no-repeat;
   }
   @media screen and (max-width: 950px) {
     width: 50vw;
@@ -149,51 +188,4 @@ const ClubName = styled.div`
     transform: scale(1.5,1.5);
   }
 `
-function Modal(props) {
-  const history = useHistory();
-
-  function toDetailPage(key) {
-    //ClubDetail페이지로 이동함
-    history.replace(`club/detail/${key}`);
-    window.location.reload();
-  }
-
-  return (
-    <>
-      {props.clubs.map(function (a, i) {
-        return (
-          <>
-            {i % 2 === 1 ? (
-              <div style={{ display: "flex" }}>
-                <ImageBoxAnchor>
-                  <ImageBox
-                    className="ImageBox"
-                    style={{ backgroundImage: `url(${props.images[i]})` }}
-                    onClick={() => toDetailPage(i)}
-                  />
-                </ImageBoxAnchor>
-                <ContentBox onClick={() => toDetailPage(i)}>
-                  <ClubName>{props.clubs[i]}</ClubName>
-                </ContentBox>
-              </div>
-            ) : (
-              <div style={{ display: "flex" }}>
-                <ContentBox onClick={() => toDetailPage(i)}>
-                <ClubName>{props.clubs[i]}</ClubName>
-                </ContentBox>
-                <ImageBoxAnchor>
-                  <ImageBox
-                    className="ImageBox"
-                    style={{ backgroundImage: `url(${props.images[i]})` }}
-                    onClick={() => toDetailPage(i)}
-                  />
-                </ImageBoxAnchor>
-              </div>
-            )}
-          </>
-        );
-      })}
-    </>
-  );
-}
 export default Club;
