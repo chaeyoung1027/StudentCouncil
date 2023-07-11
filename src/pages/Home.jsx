@@ -1,22 +1,13 @@
-//useState는 랜더링이 되는 순간에 실행된다. 즉, 변경하고자 하는 값이 있고, set은 그 값을 변경하는 함수이다.
 import React, { useState } from "react";
-//styled-components는 css를 사용할 수 있게 해주는 라이브러리이다.
 import styled from "styled-components";
 import image from "../img/mainpage.png";
 import imagecircle from "../img/circle.png";
-//react-router-dom은 라우터를 사용할 수 있게 해주는 라이브러리이다.
-// 라우터는 주소창의 주소를 변경하고, 페이지를 새로고침하는 기능을 한다.
 import { useNavigate } from "react-router-dom";
 
 function Home(props) {
-  //useState는 랜더링이 되는 순간에 실행된다. 즉, 변경하고자 하는 값이 있고, set은 그 값을 변경하는 함수이다.
-  //그래서 setWidth를 실행하면 Img 태그의 width의 값이 변경되고, 그 값이 43vw에서 90vw로 변경된다.
   const [width, setWidth] = useState("43vw");
-  //setHeight를 실행하면 Img 태그의 height의 값이 변경되고, 그 값이 43vw에서 90vw로 변경된다.
   const [height, setHeight] = useState("43vw");
-  //setMarginTop를 실행하면 Img 태그의 margin-top의 값이 변경되고, 그 값이 -53vw에서 -80vw로 변경된다.
   const [marginTop, setMarginTop] = useState("-53vw");
-  //setColor를 실행하면 Text 태그의 color의 값이 변경되고, 그 값이 #F5F8FF에서 #161616로 변경된다.
   const [color, setColor] = useState("#F5F8FF");
   const navigate = useNavigate();
 
@@ -30,9 +21,8 @@ function Home(props) {
         onClick={() => {
           setWidth("90vw");
           setHeight("90vw");
-          setMarginTop("-80vw");
+          setMarginTop("-90vw");
           setColor("#000");
-          //setTimeout을 사용한 이유는 위의 코드가 실행되고 나서 1.25초 후에 handler2()가 실행되도록 하기 위해서이다.
           setTimeout(() => {
             navigate('/homeintent');
           }, 1250);
@@ -55,11 +45,15 @@ const Img = styled.img`
   display: flex;
   justify-content: center;
   margin-top: -3vw;
-
   @media only screen and (max-width: 604px) {
-    margin-top: 60vw;
-    width: 80%;
-    height: 41%;
+    width: 83%;
+    height: 36%;
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 78% auto 0px;
   }
 `;
 const Img2 = styled.img`
@@ -67,9 +61,10 @@ const Img2 = styled.img`
   justify-content: center;
   margin: 0 auto;
   transition: all ease 2s 0s;
-
   @media only screen and (max-width: 604px) {
-    margin-top: -62vw !important;
+    margin-top: -64vw !important;
+    width: 68vw;
+    height: 68vw;
   }
 `;
 const Text = styled.div`
@@ -86,7 +81,14 @@ const Text = styled.div`
   @media only screen and (max-width: 604px) {
     margin-top: -80vw;
     font-size: 9vw;
-    width: 100%;
+    /* width: 100%; */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    text-align: center;
+    margin-top: -86vw;
+
   }
 `;
 export default Home;
