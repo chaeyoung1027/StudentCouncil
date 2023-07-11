@@ -3,14 +3,13 @@ import React from "react";
 import styled from "styled-components";
 import about from "../img/about.png";
 import "./About.css";
+import { useNavigate } from "react-router-dom";
 
 function About(props) {
-  // const history = useHistory();
-
-  // function toHome() {
-  //   history.replace("/homeintent");
-  //   window.location.reload();
-  // }
+  const navigate = useNavigate();
+  function toHome() {
+    navigate('/homeintent')
+  }
   return (
     <div id="container">
       <section
@@ -54,7 +53,7 @@ function About(props) {
             32기 학생회
           </div>
         </Box>
-        <HomeButton onClick={()=>{}}>home</HomeButton>
+        <HomeButton onClick={toHome}>home</HomeButton>
         {/* <a href="#section02" style={{position: 'absolute'}}><span></span>Scroll</a> */}
       </section>
       <section

@@ -58,13 +58,12 @@ function HomeIntent(props) {
     //     window.location.reload();
     // } 
 
-    // function about(){
-    //     history.replace("/about");
-    //     window.location.reload();
-    // }
+    function about(){
+        navigate('/about');
+    }
     return (
         <Container>
-            <Text onClick={()=>{}}>MIRIM 학생회</Text>
+            <Text onClick={about }>MIRIM 학생회</Text>
             <figure>
                 <section ref={frame}>
                     {numArray.map(function(item, index){
@@ -215,11 +214,11 @@ const Text = styled.div`
 // [12 file figure tag]
 // 전체를 감싸는 용도
 // const Section1 = styled.div`
-// 	width: 100%;
-// 	height: 100vh;
-// 	min-height: 600px;
-// 	overflow: hidden;
-// 	position: relative;
+//    width: 100%;
+//    height: 100vh;
+//    min-height: 600px;
+//    overflow: hidden;
+//    position: relative;
 //     overflow: hidden;
 // `;
 // // [12 file section tag]
@@ -227,13 +226,13 @@ const Text = styled.div`
 // const Section2 = styled.div`
 //     display: flex;
 //     width: 100%;
-// 	height: 65vh;
-// 	position: absolute;
-// 	left: 9.5%;
-// 	top: 38%;
-// 	margin-top: -25vh;
-// 	margin-left: -10vw;	
-// 	transition: 1s;
+//    height: 65vh;
+//    position: absolute;
+//    left: 9.5%;
+//    top: 38%;
+//    margin-top: -25vh;
+//    margin-left: -10vw;   
+//    transition: 1s;
 //     gap : 50px;
 // `;
 const Circle = styled.div`
@@ -272,26 +271,26 @@ const Circle = styled.div`
 // 이전 버튼
 const Prev = styled.div`
     z-index: 99;
-	width: 60px;
-	height: 60px;
-	position: absolute;
-	top: 70%;
-	left: 55%;
-	transform: translate(-20vw, -50%);  
-	display: flex;
-	align-items: center;
-	text-align: left;
-	cursor: pointer;
+   width: 60px;
+   height: 60px;
+   position: absolute;
+   top: 70%;
+   left: 55%;
+   transform: translate(-20vw, -50%);  
+   display: flex;
+   align-items: center;
+   text-align: left;
+   cursor: pointer;
     // 화살표 모션
     &:hover span {
-	opacity: 0;
-	transform: translateX(100%);
+   opacity: 0;
+   transform: translateX(100%);
     }
     &:hover::before {
-	transform: rotate(-30deg);
+   transform: rotate(-30deg);
     }
     &:hover::after {
-	transform: rotate(30deg);
+   transform: rotate(30deg);
     }
     //전체 모션
     &::before {
@@ -325,52 +324,52 @@ const Prev = styled.div`
 // 다음버튼
 const Next = styled.div`
     z-index: 99;
-	width: 60px;
-	height: 60px;
-	position: absolute;
-	top: 70%;
-	right: 52%;
-	transform: translate(20vw, -50%);
-	display: flex;
-	align-items: center;
-	text-align: right;
-	cursor: pointer;
+   width: 60px;
+   height: 60px;
+   position: absolute;
+   top: 70%;
+   right: 52%;
+   transform: translate(20vw, -50%);
+   display: flex;
+   align-items: center;
+   text-align: right;
+   cursor: pointer;
     // 화살표 모션
     &::before {
-	content: "";
-	display: block;
-	width: 100%;
-	height: 1px;
-	background: #fff;
-	position: absolute;
-	top: 50%;
-	left: 0px;
-	transform-origin: right center;
-	transform: rotate(180deg);
-	transition: 0.5s;
+   content: "";
+   display: block;
+   width: 100%;
+   height: 1px;
+   background: #fff;
+   position: absolute;
+   top: 50%;
+   left: 0px;
+   transform-origin: right center;
+   transform: rotate(180deg);
+   transition: 0.5s;
     }
     &::after {
-	content: "";
-	display: block;
-	width: 100%;
-	height: 1px;
-	background: #fff;
-	position: absolute;
-	bottom: 50%;
-	left: 0px;
-	transform-origin: right center;
-	transform: rotate(-180deg);
-	transition: 0.5s;
+   content: "";
+   display: block;
+   width: 100%;
+   height: 1px;
+   background: #fff;
+   position: absolute;
+   bottom: 50%;
+   left: 0px;
+   transform-origin: right center;
+   transform: rotate(-180deg);
+   transition: 0.5s;
     }
     &:hover span {
-	opacity: 0;
-	transform: translateX(-100%);
+   opacity: 0;
+   transform: translateX(-100%);
     }
     &:hover::before {
-	transform: rotate(30deg);
+   transform: rotate(30deg);
     }
     &:hover::after {
-	transform: rotate(-30deg);
+   transform: rotate(-30deg);
     }
 `;
 
