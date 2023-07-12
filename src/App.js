@@ -1,12 +1,12 @@
-import React, { useState } from "react";
-import {  BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import React from "react";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import HomeIntent from "./pages/HomeIntent";
 import Club from "./pages/Club";
 import ClubDetail from "./pages/ClubDetail";
 import SchEvent from "./pages/SchoolEvent";
 import About from "./pages/About";
-import ActivityDetail from './pages/ActivityDetail'
+import ActivityDetail from "./pages/ActivityDetail";
 
 function App() {
   let clubs = [
@@ -47,27 +47,27 @@ function App() {
 
   return (
     // <HashRouter basename={process.env.PUBLIC_URL}>
-      <Router>
-        <Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/homeintent" element={<HomeIntent />} />
-          <Route
-            path="/club/detail/:id"
-            element={
-              <ClubDetail
-                clubs={clubs}
-                clubsContent={clubsContent}
-                clubsLink={clubsLink}
-              />
-            }
-          />
-          <Route path="/ActivityDetail" element={<ActivityDetail />}/>
-          <Route path="/club" element={<Club clubs={clubs} />} />
-          <Route path="/schoolevent" element={<SchEvent />} />
-          <Route path="/about" element={<About />} />
-          <Route path="*" element={<h1>404 페이지</h1>} />
-        </Routes>
-      </Router>
+    <Router>
+      <Routes>
+        <Route path="/" exact element={<Home />} />
+        <Route path="/homeintent" element={<HomeIntent />} />
+        <Route
+          path="/club/detail/:id"
+          element={
+            <ClubDetail
+              clubs={clubs}
+              clubsContent={clubsContent}
+              clubsLink={clubsLink}
+            />
+          }
+        />
+        <Route path="/ActivityDetail" element={<ActivityDetail />} />
+        <Route path="/club" element={<Club clubs={clubs} />} />
+        <Route path="/schoolevent" element={<SchEvent />} />
+        <Route path="/about" element={<About />} />
+        <Route path="*" element={<h1>404 페이지</h1>} />
+      </Routes>
+    </Router>
     // </HashRouter>
   );
 }
