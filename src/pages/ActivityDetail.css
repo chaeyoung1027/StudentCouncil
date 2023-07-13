@@ -1,7 +1,7 @@
-.homeButton{
+/* .homeButton{
     margin-left: 40px;
     margin-top: 40px;
-}
+} */
 .explain{
     margin-left: 100px;
     margin-top: 200px;
@@ -17,13 +17,15 @@
     margin-top: 132px;
 }
 .dial {
-    position: absolute;
+    float: right;
+    /* position: absolute; */
     top: 50%;
-    right: 40px;
+    /* right: 40px; */
     transform: translateY(-50%);
     z-index: 0;
   }
-  .HomeButton{
+  
+  /* .HomeButton{
     cursor: pointer;
     padding: 0.4rem 1rem;
     background-color: #f3f3f3;
@@ -33,4 +35,4 @@
     float: left;
     border-radius: 0.3rem;
     margin: 1.5rem;
-  }
+  } */
