@@ -1,41 +1,78 @@
 //학생회 행사 정리 페이지
-import React from "react";
-import { useNavigate } from "react-router-dom";
-import homeButtonImg from "../img/homeButton.png";
+import React, { useState, Component } from "react";
+import styled from "styled-components";
+import { useParams, useNavigate } from "react-router-dom";
+import AliceCarousel from "./Carousel";
 import Dial from "../img/Dial.png";
 import "./ActivityDetail.css";
 
-
-function Activity() {
-  //홈으로
-  // function toHome() {
-  // history.replace("/homeintent");
-  // window.location.reload();
-  // }
+function ClubDetail(props) {
+  let { id } = useParams();
+  const navigate = useNavigate();
 
   return (
-    <div
+    <Container>
+      <HomeButton onClick={()=>{navigate('/schoolevent')}}>home</HomeButton>
+
+      <div
       style={{
         width: "100%",
         height: "100vh",
         background: "#F3F3F3",
       }}
     >
-      <img src={homeButtonImg} alt="홈버튼" className="homeButton" onClick={()=>{}} />
       <div className="explain">
-        <div className="expTitle">동아리 발표회</div>
+        <div className="expTitle">{props.activity[id]}</div>
         <div className="exp">
-          미림벤처창업반에서는 선배, 친구들과 함께 여러 공모전에 <br />
-          참여합니다. 동아리 활동을 통해 공모전 참가 경험 및 발표 경험 <br />
-          등을 쌓을 수 있습니다. 또 다양한 공모전 참여 활동을 통해 <br />
-          문제해결능력 상승에도 많은 도움이 됩니다. <br />
-          이러한 과정 속에서 선배, 후배, 친구들과 자연스레 친해져 <br />
-          학창 시절 속 가장 큰 추억으로 동아리 활동이 자리매김합니다.
+        {props.actexp[id]}
         </div>
       </div>
       <img src={Dial} alt="다이얼" className="dial" />
     </div>
+
+    </Container>
   );
 }
+const Container = styled.div`
+  top: 0;
+  width: 100vw;
+  overflow: hidden;
+  height: 1000px;
+  background-color: #F3F3F3;
+`;
+const HomeButton = styled.button`
+  cursor: pointer;
+  padding: 0.4rem 1rem;
+  background-color: #f3f3f3;
+  opacity: 0.5;
+  color: black;
+  border: none;
+  float: left;
+  border-radius: 0.3rem;
+  margin: 1.5rem;
+`;
+const Title = styled.p`
+  // 동아리 이름
+  font-size: 4.5vw;
+  font-weight: bold;
+  letter-spacing: 1px;
+  color: white;
+  margin: 0 0 5rem 0;
+  white-space: pre-wrap; //\n 줄바꿈 개행이 먹도록 추가함.
+`;
+const Content = styled.p`
+  //동아리 설명
+  width: 40vw;
+  font-size: 1.5vw;
+  color: white;
+  letter-spacing: 0.1rem;
+  white-space: pre-wrap; //\n 줄바꿈 개행이 먹도록 추가함.
+  text-overflow: ellipsis;
+  word-break:break-all;
+`;
+const Img = styled.img`
+  width: 15px;
+  height: 15px;
+`;
 
-export default Activity;
+export default ClubDetail;

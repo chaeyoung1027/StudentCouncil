@@ -23,3 +23,14 @@
     transform: translateY(-50%);
     z-index: 0;
   }
+  .HomeButton{
+    cursor: pointer;
+    padding: 0.4rem 1rem;
+    background-color: #f3f3f3;
+    opacity: 0.5;
+    color: black;
+    border: none;
+    float: left;
+    border-radius: 0.3rem;
+    margin: 1.5rem;
+  }

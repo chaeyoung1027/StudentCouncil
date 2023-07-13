@@ -4,7 +4,7 @@ import Home from "./pages/Home";
 import HomeIntent from "./pages/HomeIntent";
 import Club from "./pages/Club";
 import ClubDetail from "./pages/ClubDetail";
-import SchEvent from "./pages/SchoolEvent";
+import SchEvent from "./pages/Activity";
 import About from "./pages/About";
 import ActivityDetail from "./pages/ActivityDetail";
 
@@ -45,6 +45,27 @@ function App() {
     "https://www.instagram.com/2023.miven/",
   ];
 
+  let activity = [
+    "인수인계식",
+    "대신 전해드립니다",
+    "롤링페이퍼",
+    "동아리발표회",
+    "느린우체통",
+    "미림 다 모여라",
+    "오늘은 일상에서 기부(517)",
+    "캠페인",
+  ];
+  let actexp = [
+    "인수인계식설명",
+    "대신 전해드립니다설명",
+    "롤링페이퍼설명",
+    "동아리발표회설명",
+    "느린우체통설명",
+    "미림 다 모여라설명",
+    "오늘은 일상에서 기부(517)설명",
+    "캠페인설명",
+  ];
+
   return (
     // <HashRouter basename={process.env.PUBLIC_URL}>
     <Router>
@@ -61,9 +82,17 @@ function App() {
             />
           }
         />
-        <Route path="/ActivityDetail" element={<ActivityDetail />} />
+        <Route
+          path="/schoolevent/detail/:id"
+          element={
+            <ActivityDetail
+              activity={activity}
+              actexp={actexp}
+            />
+          }
+        />
         <Route path="/club" element={<Club clubs={clubs} />} />
-        <Route path="/schoolevent" element={<SchEvent />} />
+        <Route path="/schoolevent" element={<SchEvent activity={activity} />} />
         <Route path="/about" element={<About />} />
         <Route path="*" element={<h1>404 페이지</h1>} />
       </Routes>

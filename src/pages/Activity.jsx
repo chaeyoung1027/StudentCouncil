@@ -11,7 +11,7 @@ import image6 from "../img/schoolevent_group/6.jpeg";
 import image7 from "../img/schoolevent_group/7.JPG";
 
 function SchoolEvent(props) {
-
+    const navigate = useNavigate();
   let images = [
     image0,
     image1,
@@ -23,13 +23,9 @@ function SchoolEvent(props) {
     image7
   ];
 
-  // function handler2() {
-  //   history.replace("./homeintent");
-  //   window.location.reload();
-  // }
   return (
-    <Container className="body">
-      <HomeButton onClick={()=>{}}>home</HomeButton>
+    <Container>
+      <HomeButton onClick={()=> navigate('/homeintent')}>home</HomeButton>
       <div style={{ float: "left" }}>
         <Writing>
           <Title>MIRIM SOCIETY</Title>
@@ -41,31 +37,78 @@ function SchoolEvent(props) {
           </Content>
         </Writing>
       </div>
-      {/* <RightSideBar className="rightBar">
-        모달. map사용. 배열에 사진링크 넣고 삽입.
-        <Modal schoolevents={images} images={images} />
-      </RightSideBar> */}
+      <RightSideBar className="rightBar">
+        {/* 모달. map사용. 배열에 사진링크 넣고 삽입. */}
+        <Modal activity={props.activity}images={images} />
+      </RightSideBar>
     </Container>
   );
 }
+
+function Modal(props) {
+  const navigate = useNavigate();
+
+  return (
+    <>
+      {props.activity.map(function (a, i) {
+        return (
+          <>
+            {i % 2 === 1 ? (
+              <div style={{ display: "flex" }}>
+                <ImageBoxAnchor>
+                  <ImageBox
+                    imgUrl={props.images[i]}
+                    className="ImageBox"
+                    onClick={() => navigate(`detail/${i}`)}
+                  />
+                </ImageBoxAnchor>
+                <ContentBox onClick={() => navigate(`detail/${i}`)}>
+                  <EventName>{props.activity[i]}</EventName>
+                </ContentBox>
+              </div>
+            ) : (
+              <div style={{ display: "flex" }}>
+                <ContentBox onClick={() => navigate(`detail/${i}`)}>
+                <EventName>{props.activity[i]}</EventName>
+                </ContentBox>
+                <ImageBoxAnchor>
+                  <ImageBox
+                    imgUrl={props.images[i]}
+                    className="ImageBox"
+                    onClick={() => navigate(`detail/${i}`)}
+                  />
+                </ImageBoxAnchor>
+              </div>
+            )}
+          </>
+        );
+      })}
+    </>
+  );
+}
+
 const Container = styled.div`
-  /* height: 50.5rem; */
   width: 100vw;
-  height: 100%;
-  // overflow: hidden;
-  top: 0;
+  height: 200vh;
+
   background-color: #f3f3f3;
-  /* padding: 4rem; */
+  position: fixed;
   @media screen and (max-width: 1776px) {
-    overflow: hidden;
+    position: unset;
+    height: 400vh;
+  }
+  @media screen and (max-width: 950px) {
+    height: 0;
   }
 `;
 const RightSideBar = styled.div`
   float: left;
-  height: 100%;
+  height: 100vh;
   overflow: scroll;
   @media screen and (max-width: 1776px) {
+    height: 0;
     margin-left: 5vw;
+    overflow: unset;
   }
   @media screen and (max-width: 950px) {
     margin-left: 0;
@@ -106,14 +149,11 @@ const ImageBoxAnchor = styled.a`
 const ImageBox = styled.div`
   width: 360px;
   height: 300px;
-  background-color: black;
   border: 0.5px black solid;
-  background-size: cover; //이미지 꽉차게
-  background-position: center; //이미지 가운데 정렬
-  transition: 0.3s;
-  &:hover,
-  &:focus {
-    transform: scale(1.2);
+  background: black;
+  transition: 0.8s;
+  &:hover{
+    background: ${(props) =>`url(${props.imgUrl})`} center/cover no-repeat;
   }
   @media screen and (max-width: 950px) {
     width: 50vw;
@@ -132,51 +172,17 @@ const ContentBox = styled.div`
     width: 50vw;
     height: 45vw;
   }
-`;
-// function Modal(props) {
-//   const navigate = useNavigate();
-//   // function toDetailPage(key) {
-//   //   //ClubDetail페이지로 이동함
-//   //   history.replace(`schoolevent/detail/${key}`);
-//   //   window.location.reload();
-//   // }
 
-//   return (
-//     <>
-//       {props.schoolevents.map(function (a, i) {
-//         return (
-//           <>
-//             {i % 2 === 1 ? (
-//               <div style={{ display: "flex" }}>
-//                 <ImageBoxAnchor>
-//                   <ImageBox
-//                     className="ImageBox"
-//                     style={{ backgroundImage: `url(${props.images[i]})` }}
-//                     onClick={() => toDetailPage(i)}
-//                   />
-//                 </ImageBoxAnchor>
-//                 <ContentBox onClick={() => toDetailPage(i)}>
-//                   {props.schoolevents[i]}
-//                 </ContentBox>
-//               </div>
-//             ) : (
-//               <div style={{ display: "flex" }}>
-//                 <ContentBox onClick={() => toDetailPage(i)}>
-//                   {props.schoolevents[i]}
-//                 </ContentBox>
-//                 <ImageBoxAnchor>
-//                   <ImageBox
-//                     className="ImageBox"
-//                     style={{ backgroundImage: `url(${props.images[i]})` }}
-//                     onClick={() => toDetailPage(i)}
-//                   />
-//                 </ImageBoxAnchor>
-//               </div>
-//             )}
-//           </>
-//         );
-//       })}
-//     </>
-//   );
-// }
+`;
+const EventName = styled.div`
+  cursor: pointer;
+  transition: 0.3s;
+  &:hover{
+    -webkit-transform: scale(1.5,1.5);
+    -moz-transform: scale(1.5,1.5);
+    -o-transform: scale(1.5,1.5);
+    -ms-transform: scale(1.5,1.5);
+    transform: scale(1.5,1.5);
+  }
+`
 export default SchoolEvent;
