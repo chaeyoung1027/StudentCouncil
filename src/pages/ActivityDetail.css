@@ -19,12 +19,35 @@
 .dial {
     float: right;
     /* position: absolute; */
-    top: 50%;
+    /* top: 50%; */
     /* right: 40px; */
     transform: translateY(-50%);
     z-index: 0;
+    margin-top: 115px;
   }
   
+.image2{
+    margin-right: 50px;
+    margin-top: -90px;
+    float: right;
+    width: 15%;
+    height: 15%;
+}
+.image1, .image3{
+    float: right;
+    width: 9%;
+    height: 9%;
+    filter: brightness(60%);
+    opacity : 85%;
+}
+.image1{
+    margin-top: -390px;
+    margin-right: -100px;
+}
+.image3{
+    margin-right: -435px;
+    margin-top:370px;
+}
   /* .HomeButton{
     cursor: pointer;
     padding: 0.4rem 1rem;

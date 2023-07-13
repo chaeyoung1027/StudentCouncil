@@ -176,6 +176,9 @@ function ClubDetail(props) {
         </div>
       </div>
       <img src={Dial} alt="다이얼" className="dial" />
+      <img src={i0} alt="이미지1" className="image1" />
+      <img src={i1} alt="이미지2" className="image2" />
+      <img src={Image[0]} alt="이미지3" className="image3" />
     </div>
 
     </Container>
