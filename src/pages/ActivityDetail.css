@@ -2,53 +2,57 @@
     margin-left: 40px;
     margin-top: 40px;
 } */
-.explain{
-    margin-left: 100px;
-    margin-top: 200px;
-    position: relative;
-    z-index: 1;
+.explain {
+  margin-left: 100px;
+  margin-top: 200px;
+  position: relative;
+  z-index: 1;
 }
-.expTitle{
-    font-size:60px;
-    font-weight: 900;
+.expTitle {
+  font-size: 60px;
+  font-weight: 900;
 }
-.exp{
-    font-size: 26px;
-    margin-top: 132px;
+.exp {
+  font-size: 26px;
+  margin-top: 132px;
+}
+div {
+  white-space: pre-wrap;
 }
 .dial {
-    float: right;
-    /* position: absolute; */
-    /* top: 50%; */
-    /* right: 40px; */
-    transform: translateY(-50%);
-    z-index: 0;
-    margin-top: 115px;
-  }
-  
-.image2{
-    margin-right: 50px;
-    margin-top: -90px;
-    float: right;
-    width: 15%;
-    height: 15%;
+  float: right;
+  /* position: absolute; */
+  /* top: 50%; */
+  /* right: 40px; */
+  transform: translateY(-50%);
+  z-index: 0;
+  margin-top: 115px;
 }
-.image1, .image3{
-    float: right;
-    width: 9%;
-    height: 9%;
-    filter: brightness(60%);
-    opacity : 85%;
+
+.image2 {
+  margin-right: 50px;
+  margin-top: -90px;
+  float: right;
+  width: 15%;
+  height: 15%;
 }
-.image1{
-    margin-top: -390px;
-    margin-right: -100px;
+.image1,
+.image3 {
+  float: right;
+  width: 9%;
+  height: 9%;
+  filter: brightness(60%);
+  opacity: 85%;
 }
-.image3{
-    margin-right: -435px;
-    margin-top:370px;
+.image1 {
+  margin-top: -390px;
+  margin-right: -100px;
 }
-  /* .HomeButton{
+.image3 {
+  margin-right: -435px;
+  margin-top: 370px;
+}
+/* .HomeButton{
     cursor: pointer;
     padding: 0.4rem 1rem;
     background-color: #f3f3f3;

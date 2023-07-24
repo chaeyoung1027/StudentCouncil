@@ -14,13 +14,26 @@ function ClubDetail(props) {
 
   return (
     <Container>
-      <HomeButton onClick={()=>{navigate('/club')}}>home</HomeButton>
+      <HomeButton
+        onClick={() => {
+          navigate("/club");
+        }}
+      >
+        home
+      </HomeButton>
       <div style={{ float: "left", width: "40%" }}>
         <div className="content">
           <Title className="title">{props.clubs[id]}</Title>
-            <a href={props.clubsLink[id]} target='_blank'>
-              <img src={process.env.PUBLIC_URL + `/public_assets/linkicon.png`} style={{width: '40px', height: '40px', filter: 'opacity(1) drop-shadow(0 0 0 #ffffff);'}}/>
-            </a>
+          <a href={props.clubsLink[id]} target="_blank">
+            <img
+              src={process.env.PUBLIC_URL + `/public_assets/linkicon.png`}
+              style={{
+                width: "40px",
+                height: "40px",
+                filter: "opacity(1) drop-shadow(0 0 0 #ffffff);",
+              }}
+            />
+          </a>
           <Content className="inner-content">{props.clubsContent[id]}</Content>
         </div>
       </div>
@@ -70,7 +83,7 @@ const Content = styled.p`
   letter-spacing: 0.1rem;
   white-space: pre-wrap; //\n 줄바꿈 개행이 먹도록 추가함.
   text-overflow: ellipsis;
-  word-break:break-all;
+  word-break: break-all;
 `;
 const Img = styled.img`
   width: 15px;
